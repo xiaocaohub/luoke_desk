@@ -1,0 +1,101 @@
+.shop_info_con{
+    margin-top:16px;
+    background: #fff;
+}
+.shop_info_con .shop_title{
+
+    overflow: hidden;
+    font-size:16px;
+    color:#C6A189;
+}
+
+.shop_info_con .shop_title .tit{
+    height: 50px;
+    line-height: 50px;
+    border-bottom:2px solid #C6A189;
+    float: left;
+    margin-left: 40px;
+}
+.shop_info_con .user_info_con{
+    min-height: 320px;
+    border-top:1px solid #E1E1E1 ;
+}
+.shop_info_con .user_info_con .title_item{
+    font-size:16px;
+    margin:40px 0 29px 20px;
+}
+.shop_info_con .user_info_con .info_list{
+   overflow: hidden;
+   width:90%;
+   margin:0 auto;
+}
+.shop_info_con .user_info_con .info_list > li{
+    font-size: 14px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.shop_info_con .user_info_con .info_list > li .title{
+
+
+    width:12%;
+    height: 32px;
+    line-height: 32px;
+    float: left;
+    text-align: right;
+}
+
+.shop_info_con .user_info_con .info_list > li .title span{
+    color: #E61D40;
+}
+.shop_info_con .user_info_con .info_list > li  .right_txt{
+    width:85%;
+    float: right;
+    line-height: 32px;
+    min-height: 32px;
+}
+.shop_info_con .user_info_con .info_list > li  .right_txt .detail_address{
+    margin-top:20px;
+}
+
+
+.shop_info_con .user_info_con .btn_group{
+    width: 85%;
+    float: right;
+    overflow: hidden;
+    margin: 29px 0 40px;
+  
+}
+
+.shop_info_con .user_info_con .btn_group > .btn{
+    width: 124px;
+    height: 42px;
+    line-height: 42px;    
+    float: left;
+    font-size: 16px;
+    text-align: center;
+    border:1px solid #333;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+.shop_info_con .user_info_con .btn_group > .btn:hover{
+    cursor: pointer;
+    background: #333;
+    color:#fff;
+}
+.shop_info_con .user_info_con  .title_msg{
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

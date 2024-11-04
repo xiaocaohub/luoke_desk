@@ -1,0 +1,32 @@
+.tab_nav_list{
+    width:51%;
+    overflow:hidden;
+}
+.tab_nav_list >li{
+    width:10%;
+    height:32px;
+    line-height:32px;
+    float:left;
+    text-align:center;
+    
+    margin:0 2%;
+    cursor:pointer;
+    font-size: 14px;
+}
+.tab_nav_list >li.on{
+    background:#C6A189 ;
+    color:#fff;
+    border-radius:32px;
+}
+
+
+.series_nav_con .tab_nav_list{
+    margin:20px auto 0;
+}
+.artist_nav_con .tab_nav_list{
+    
+    float:left;
+    margin-top:20px;
+
+    margin-left:2.3%;
+}

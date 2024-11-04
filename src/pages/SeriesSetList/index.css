@@ -1,0 +1,74 @@
+.series_list_page{
+    overflow:hidden;
+    background:#F5F5F5;
+ 
+}
+.series_list_page .banner_con{
+   overflow:hidden;
+   margin-top:20px;
+   position:relative;
+}
+.series_list_page .banner_con .banner{
+    display:block;
+    width:100%;
+    object-fit: cover;
+}
+
+.series_list_page .banner_con .banner_text{
+   width:100%;
+   height:100%;
+   position:absolute;
+   left:0;
+   top:0;
+   z-index:1;
+   text-align:center;
+}
+
+.series_list_page .banner_con .banner_text .title{
+  color:#fff;
+  font-size:3.2em;
+  margin-top:5.7%;
+  overflow:hidden;
+}
+.series_list_page .banner_con .banner_text .txt {
+    height:5.9%;
+    color:#F0F0F0;
+    font-size: 18px;
+    margin:1.5% 0 1%;
+}
+
+
+.series_list_page .banner_con .banner_text  .companey_name{
+    height:20px;
+    color:#F0F0F0;
+
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.series_list_page .banner_con .banner_text .btn{
+   width:149px;
+   height:12%;
+   background:#fff;
+   color:#C6A189;
+   margin:0 auto;
+   display:flex;
+   flex-direction:row;
+   justify-content: center;
+   align-items: center;
+   border-radius: 40px;
+   font-size: 16px;
+}
+.series_list_page .nav_con{
+   height:360px;
+}
+.series_list_page .good_list{
+   overflow:hidden;
+   margin-top:50px;
+   padding-bottom:3px;
+}
+.series_list_page .page{
+   display:block;
+   margin:100px auto;
+   text-align:center;
+ 
+}

@@ -1,0 +1,30 @@
+.artist_detail_con{
+    background:#F5F5F5;
+}
+.artist_detail_con .img{
+   display:block;
+   width:100%;
+   margin:20px 0;
+}
+.artist_detail_con .title{
+ 
+    height:16px;
+
+    line-height:16px;
+    overflow:hidden;
+
+    font-size:14px;
+ 
+    font-weight:20px;
+    
+    margin:20px 0 10px;
+}
+.artist_detail_con .txt{
+    font-size:12px;
+    line-height:30px;
+
+
+
+    margin-bottom:50px;
+}
+

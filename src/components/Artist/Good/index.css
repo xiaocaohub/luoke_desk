@@ -1,0 +1,32 @@
+.artist_con .good_list  .good{   
+    width:29%;
+    
+    float:left;
+    margin-left:3.2%;
+    margin-top:3.2%;
+    border:1px solid #E1E1E1;
+    border-radius:10px;
+}
+.artist_con .good_list  .good:hover{
+    border-color:#C6A189;
+    color:#C6A189;
+}
+.artist_con .good_list  .good .good_img{
+    display:block;
+
+    width:100%;
+
+    height:265px;
+}
+
+
+.artist_con .good_list  .good .text{
+    height:16px;
+    line-height:16px;
+    font-size:14px;
+    margin:20px;
+    overflow:hidden;
+}
+
+
+

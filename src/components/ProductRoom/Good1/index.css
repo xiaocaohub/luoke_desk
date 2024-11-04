@@ -1,0 +1,54 @@
+.product_list > li{
+    width:23.3%;
+    overflow:hidden;
+    border:1px solid #E1E1E1;
+    float:left;
+    margin-left:2%;
+    margin-bottom:2%;
+    border-radius:10px;
+    background:#fff;
+}
+.product_list > li:nth-child(4n+1) {
+    margin-left: 0;
+}
+
+.product_list > li .good_img{
+ 
+   display:block;
+   width:100%;
+}
+.product_list > li .text_con{
+   padding:15px;
+}
+.product_list > li .text_con .txt{
+   height:15px;
+   line-height:15px;
+   overflow:hidden;
+   font-size:14px;
+   text-overflow: ellipsis;
+   white-space:nowrap;
+   color:#666;
+}
+
+.product_list > li .text_con .price{
+   height:25px;
+   line-height:25px;
+   overflow:hidden;
+   font-size:21px;
+
+
+   color:#1A1A1A;
+   margin-top:10px;
+   font-weight:bold;
+}
+
+.product_list > li .text_con .price .unit{
+    font-size:15px;
+    position:relative;
+    top:-2px;
+}
+
+.product_list > li:hover{
+
+    border-color:#C6A189;
+}

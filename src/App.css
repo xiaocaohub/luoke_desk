@@ -1,0 +1,25 @@
+body{
+    padding-top:151px;
+    background:#F0F0F0;
+}
+::-webkit-input-placeholder{
+
+    color: #BBB;
+}
+.content_common_width{
+    max-width: 1360px;
+    width:85%;
+    margin:0 auto;  
+    overflow: hidden;
+}
+
+
+.content_common_width_noover{
+
+    max-width: 1360px;
+    width:85%;
+    margin:0 auto;  
+}
+a{
+    text-decoration: none;
+}

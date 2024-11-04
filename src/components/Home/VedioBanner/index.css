@@ -1,0 +1,165 @@
+.vedio_banner_con{
+   position:relative;
+}
+
+.vedio_banner_con .big_video{
+    /* max-height: 770px;
+    min-height: 770px;   */
+ 
+    width: 100%;
+    display: block;
+    max-width: none;
+    object-fit: cover;
+    outline:none;
+}
+
+
+
+
+.vedio_banner_con .vedio_list_con{
+   
+    width:100%;
+    
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+ 
+}
+
+
+.vedio_banner_con .vedio_list_con .shadow{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    background:#000;
+
+
+    opacity:0.75;
+    z-index:1;
+}
+.vedio_banner_con .vedio_list_con .vedio_list_content{
+   
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:1;
+}
+
+.vedio_banner_con .vedio_list_con .vedio_list_content .title_con{
+    overflow:hidden;
+    margin-top:10%;
+}
+.vedio_banner_con .vedio_list_con .vedio_list_content .title_con .left{
+    width:60%;
+    float:left;
+}
+.vedio_banner_con .vedio_list_con .vedio_list_content .title_con .left .small_title{
+    height:31px;
+    line-height:31px;
+    font-size:24px;
+    color:#fff;
+    overflow:hidden;
+}
+.vedio_banner_con .vedio_list_con .vedio_list_content .title_con .left .big_title{
+    height:60px;
+    line-height:60px;
+    font-size:48px;
+    color:#C6A189;
+    text-transform: uppercase;
+}
+.vedio_banner_con .vedio_list_con .vedio_list_content .title_con .more_btn{
+    border:1px solid #fff;
+    color:#fff;
+    float:right;
+    margin-top:42px;
+    text-decoration: none;
+}
+.vedio_banner_con  .vedio_list{
+   overflow:hidden;
+   height:50%;
+   margin-top:6.3%;
+}
+.vedio_banner_con  .vedio_list > li{
+    width:31%;
+    height:100%;
+    float:left;
+    margin-left:3.5%;
+    overflow:hidden;
+    position:relative;
+    cursor:pointer;
+}
+.vedio_banner_con  .vedio_list > li:first-child{
+    margin-left:0;
+}
+.vedio_banner_con  .vedio_list > li .img{
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+.vedio_banner_con  .vedio_list > li .play_icon{
+   display:block;
+   width:60px;
+   height:60px;   
+   position:absolute;
+   left:50%;
+   margin-left:-30px;
+   top:50%;
+   margin-top:-30px;
+   cursor:pointer;
+}
+
+
+
+.vedio_banner_con  .vedio_list > li .text_con{
+
+    width:100%;
+    height:40px;
+   
+    position:absolute;
+    left:0;
+    bottom:0;
+}
+.vedio_banner_con  .vedio_list > li .text_con .shadow{
+    width:100%;
+    height:40px;
+    background:#000;
+    position:absolute;
+    left:0;
+    top:0;
+    opacity:0.8;
+    z-index:1;
+}
+
+
+.vedio_banner_con  .vedio_list > li .text_con .text{
+   width:100%;
+   height:40px;
+
+   line-height:40px;
+   position:absolute;
+   left:0;
+   top:0;
+   z-index:2;
+   color:#fff;
+   font-size:14px;
+}
+.vedio_banner_con  .vedio_list > li .text_con .text .txt{
+    float:left;
+    margin-left:20px;
+}
+.vedio_banner_con  .vedio_list > li .text_con .text  .collect_txt{
+    max-width:58px;
+    height:40px;
+    line-height:40px;
+    float:right;
+    background:url("../../../assets/collect_icon.png") no-repeat left center;
+    padding-left:20px;
+    margin-right:20px;
+    cursor:pointer;
+}

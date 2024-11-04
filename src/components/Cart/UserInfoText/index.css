@@ -1,0 +1,27 @@
+.user_info_text > li{
+ 
+    line-height:15px;
+  
+    font-size:14px;
+
+    
+    overflow:hidden;
+    margin-bottom:15px;
+}
+
+.user_info_text > li .tit{
+   width:65px;
+   float:left; 
+   margin-right:15px;
+}
+.user_info_text > li .txt_remark{
+   width:93%;
+   display: block;
+   float:left;
+}
+.user_info_text > li  .change_btn{
+   float:right;
+   color:#E8A468;
+   margin-right:50%;
+}
+

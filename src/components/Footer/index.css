@@ -1,0 +1,137 @@
+.footer_con{
+    overflow:hidden;
+    background:#1A1A1A;
+    color:#fff;
+    font-size:25px;
+}
+.footer_con .footer_content{
+    overflow:hidden;
+    padding:115px 0 105px;
+    display:flex;
+    flex-direction:row;
+    color:#999;
+    justify-content:space-between;
+}
+.footer_con .footer_content .left{
+   width:34.3%;
+   float:left;
+}
+
+.footer_con .footer_content .left .logo_con{
+   overflow:hidden;
+   position:relative;
+  
+}
+
+
+.footer_con .footer_content .left .logo_con .logo_footer{
+   width:57%;
+   float:left;
+   display:block;
+}
+.footer_con .footer_content .left .logo_con  .tit{
+   position:absolute;
+   height: 14px;
+   line-height: 14px;
+   right:0;
+   bottom:0;
+
+
+   font-size:12px;
+ 
+}
+.footer_con  .icon_list{
+
+
+   overflow:hidden;
+   border-top:1px solid #999;
+   margin-top:29px;
+   padding-top:29px;
+ 
+}
+
+.footer_con  .icon_list > li{
+   width:49%;
+   float:left;
+   display:flex;
+   flex-direction:row;
+   align-items:center;
+   overflow:hidden;
+   margin-bottom:20px;
+   color:#999;
+   font-size: 16px;
+}
+
+.footer_con  .icon_list > li .icon{
+    width:29px;
+    height:29px;
+    float:left;
+    margin-right:10px;
+}
+
+.footer_con  .info_list {
+    margin-top:29px;
+    margin-bottom:20px;
+    color: #999;
+    font-size: 16px;
+}
+.footer_con  .info_list > li{
+    overflow:hidden;
+    margin-bottom:29px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+.footer_con  .info_list > li img{
+    float:left;
+    margin-right:10px;
+}
+.footer_con  .code_list {
+    width:25%;
+    overflow:hidden;
+    float:right;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    color: #999;
+}
+.footer_con  .code_list > li{
+    width:23%;
+    float:left;
+}
+.footer_con  .code_list > li img{
+    display:block;
+    width:100%;
+    cursor:pointer;
+}
+.footer_con  .code_list > li .txt{
+    text-align:center;
+    margin-top:10px;
+    font-size:12px;
+}
+.footer_con .copy{   
+    height:60px;
+    line-height:60px;
+    
+    background:#343434;
+    text-align:center;
+    color:#999;
+    font-size:12px;
+}
+.footer_con  .copy .copy_number{
+    color:#999;
+    margin-left:10px;
+    text-decoration: none;
+}
+.footer_con  .copy .copy_number:nth-child(2){
+    margin-right:29px;
+}
+.footer_con  .copy .copy_number:hover{
+    color:#C6A189;
+}
+.footer_con  .copy .icon{
+    margin-right:16px;
+    position:relative;
+    top:8px;
+}
+ 

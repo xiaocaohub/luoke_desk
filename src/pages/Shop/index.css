@@ -1,0 +1,70 @@
+.people_order_list_con{
+    width:100%;
+    position:absolute;
+
+    left:0;
+
+    top:0;
+}
+.shop_con{
+    margin-top:79px;
+    overflow:hidden;
+ 
+}
+.shop_con .left_content{
+    width:10.8%;
+    
+    height:100vh;
+    float:left;
+    background:#fff;
+ 
+}
+
+.shop_con .main_content{
+    width:87%;
+ 
+
+    float:right;
+    margin-right:1%;
+    background:#F0F0F0;
+}
+.shop_con .left_content .title{
+    height:50px;
+    line-height:50px;
+    font-size:16px;
+    overflow: hidden;
+
+    text-align:center;
+
+
+ 
+}
+.shop_con .left_content .title span{
+    background:url("../../assets/icon/shop_setting.png") no-repeat left center;
+ 
+    padding-left:25px;
+ 
+    margin-left:-15px;
+}
+.shop_con .left_content .menu_list{
+    border-bottom:1px solid #E1E1E1;
+}
+.shop_con .left_content .menu_list > li{
+    height:50px;
+    line-height: 50px;
+    text-align:center;
+
+    cursor:pointer;
+    border-left:4px solid transparent;
+    font-size: 14px;
+ 
+}
+.shop_con .left_content .menu_list > li a{
+    color:#666;
+    text-decoration: none;
+}
+
+.shop_con .left_content .menu_list > li.on{
+
+    border-color:#C6A189;
+}

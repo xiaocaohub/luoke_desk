@@ -1,0 +1,149 @@
+.hot_selling_con{
+    margin-top:88px;
+}
+.hot_selling_con .title_con{
+    overflow:hidden;
+    position:relative;
+}
+.hot_selling_con .title_con .left{
+    width:75%;
+    float:left;
+}
+.hot_selling_con .title_con .left .small_title{
+    height:28px;
+    line-height:28px;
+    font-size:24px;
+
+    overflow:hidden;
+}
+.hot_selling_con .title_con .left .big_title{
+    height:58px;
+    line-height:58px;
+    font-size:48px;
+    overflow:hidden; 
+    color:#C6A189;
+}
+
+.hot_selling_con .title_con .left .txt{
+    width:150px;
+    font-size:12px;
+    height:14px;
+
+    line-height:14px;
+    padding-top:20px;
+    margin-top:10px;
+    font-size:12px;
+    color:#666;
+    border-top:1px solid #1A1A1A;
+}
+
+
+.hot_selling_con .more_btn{
+    float:right;
+    position:absolute;
+    right:0;
+    bottom:0;
+}
+
+.hot_selling_con .hot_banner_con{
+    margin-top:60px;
+    position:relative;
+   
+}
+.hot_selling_con  .ant-carousel .slick-slide {
+    text-align: center;
+    overflow: hidden;
+  }
+  
+.hot_selling_con   .ant-carousel .slick-slide h3 {
+    color: #fff;
+}
+.hot_selling_con   .ant-carousel .slick-slide .good_item{
+   /* width:24.12%; */
+   width:23.7%;
+   float:left; 
+   margin-left:1.7%;  
+   background:#fff;
+ 
+}
+.hot_selling_con   .ant-carousel .slick-slide .good_item:first-child{
+    margin-left:0;
+}
+.hot_selling_con   .ant-carousel .slick-slide .good_item a{
+    display:block;
+    width: 100%;
+   
+    overflow: hidden;
+    position:relative;
+}
+.hot_selling_con   .ant-carousel .slick-slide  .good_item .good_img{
+    display:block;
+    width:100%;
+    object-fit: cover;
+}
+.hot_selling_con   .ant-carousel .slick-slide  .good_item  .text_con{
+   background:#fff;
+   overflow:hidden;
+   font-size: 18px;
+   margin-top:20px;
+   color: #1A1A1A;
+}
+.hot_selling_con   .ant-carousel .slick-slide  .good_item  .text_con .txt{
+   max-width:74.5%;
+   min-width: 69%;
+   height:21px;
+   line-height:21px;
+   float:left;
+   overflow:hidden;
+   text-align:left;
+   text-indent:5%;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   background: url("../../../assets/hot_sell_icon.png") no-repeat left center;
+}
+.hot_selling_con   .ant-carousel .slick-slide  .good_item  .text_con  .price{
+    height:21px;
+    line-height:21px;
+    float:right;
+    margin-right:3%;
+}
+
+.hot_banner_con{
+ 
+}
+.hot_banner_con .left_btn, .hot_banner_con .right_btn{
+    width:45px;
+    height:74px;
+    position:absolute;
+    top:50%;
+    margin-top:-80px;
+    z-index:1;
+    cursor:pointer;
+}
+
+.hot_banner_con .left_btn{
+    left:0;
+    background:url("../../../assets/hot_banner_left_btn.png") no-repeat center;
+}
+ 
+.hot_banner_con .right_btn{
+    right:0;
+    background:url("../../../assets/hot_banner_right_btn.png") no-repeat center;
+}
+
+.hot_banner_con .banner_line{
+    height:0;
+    border:2px solid #B9B9B9;
+    margin-top:3%;
+}
+
+.hot_banner_con .banner_line span{
+    width:25%;
+    display:block;
+    height:0;
+    border:2px solid #C6A189;
+    position:relative;
+    top:-2px;
+    left:-2px;
+    transition:all 0.5s;
+}

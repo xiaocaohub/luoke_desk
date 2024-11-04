@@ -1,0 +1,189 @@
+.platform_con{
+   
+}
+.platform_con .balance_con{
+    overflow:hidden;
+    background:#fff;
+    position:relative;
+    padding:20px;
+}
+.platform_con .balance_con .balance{
+    width:260px;
+    float:left;
+    height:74px;
+    padding:28px 20px;
+    border:1px solid #C6A189;
+    border-radius:5px;
+    position:relative;
+    cursor:pointer;
+}
+.platform_con .balance_con .balance.on{
+    background:url("../../../assets/icon/pay_select_on.png") no-repeat right top;
+}
+.platform_con .balance_con .balance .title{
+    height:29px;
+    line-height:29px;
+    background:url('../../../assets/icon/wallet.png') no-repeat left center;
+    font-size:18px;
+    padding-left:50px;
+}
+.platform_con .balance_con .balance .money{
+    font-size:24px;
+    font-weight:bold;
+    color:#E61D40;
+    margin-top:10px;
+    padding-left:50px;
+    overflow:hidden;
+}
+
+
+.platform_con .balance_con .balance  .unit{
+    font-size:12px;
+}
+.platform_con .balance_con .balance_pay{
+    position:absolute;
+    bottom:20px;
+    right:20px;
+}
+.platform_con .balance_con .balance_pay span{
+    color:#E61D40;
+    font-weight:bold;
+}
+
+.platform_con .pay_list{
+    overflow:hidden;
+ 
+    border:1px dashed #E1E1E1;
+    padding:20px;
+    border-left:0;
+    border-right:0;
+    background:#fff;
+    position:relative;
+}
+.platform_con .pay_list > li{
+    width:17.5%;
+    border-radius:5px;
+    height:60px;
+    line-height:60px;
+    border:1px solid #E1E1E1;
+    margin-right:20px;
+    float:left;
+    cursor:pointer;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items: center;
+}
+.platform_con .pay_list > li img{
+    margin-top:5px;
+    width:24%;
+    height:auto;
+    margin-right:9.5%;
+}
+.platform_con .pay_list > li.on{
+    background:#FFF9F6;
+    border-color:#C6A189;
+}
+.platform_con .pay_list .money{
+    position:absolute;
+    right:20px;
+    bottom:20px;
+ 
+}
+.platform_con .pay_list .money span{
+    color:#E61D40;
+    font-weight:bold;
+}
+.platform_con .line{
+    height:29px;
+    background:#fff;
+}
+.platform_con  .pay_btn{
+    
+    width:200px;
+
+    height:42px;
+
+    line-height:42px;
+    text-align:center;
+    overflow:hidden;
+    border-radius:5px;
+    background:#1A1A1A;
+    color:#fff;
+
+
+    float:right;
+
+    margin-top:29px;
+    cursor:pointer;
+    margin-bottom:100px;
+}
+
+
+
+.platform_con  .code_con{
+ 
+   margin:20px 0 100px;
+   border:1px solid #E1E1E1;
+   border-top:0;
+}
+.platform_con  .code_con .title{
+
+    color:#fff;
+    height:40px;
+    line-height:40px;
+    padding:0 20px;
+    
+    background:#C6A189;
+}
+
+
+.platform_con  .code_con  .tit{
+    height:29px;
+    line-height:29px;
+    padding:0 20px;
+
+    background:#FFF9F6;
+    font-size:12px;
+    overflow:hidden;
+    color:#666;
+}
+.platform_con  .code_con .code_img_con{
+    width:465px;
+
+    overflow:hidden;
+ 
+    margin:40px auto 50px;
+}
+.platform_con  .code_con .code_img_con .left{
+    width:240px;
+
+    float:left;
+ 
+}
+
+.platform_con  .code_con .code_img_con .left .code{
+    padding:20px;
+    border:1px solid #E1E1E1;
+}
+.platform_con  .code_con .code_img_con .left .code img{
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+.platform_con  .code_con .code_img_con .left  .txt{
+    height:29px;
+    font-size:12px;
+    margin-top:10px;
+    background:#C6A189 url("../../../assets/icon/sweep.png") no-repeat 40px center;
+    color:#fff;
+    padding:5px 40px 6px 90px;
+
+}
+.platform_con  .code_con .code_img_con .phone_img{
+
+    display:block;
+    float:right;
+}
+

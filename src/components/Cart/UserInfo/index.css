@@ -1,0 +1,93 @@
+.cart_page_con .user_info_con{
+    background:#fff;
+    margin:20px 0;
+    padding:20px;
+ 
+}
+.cart_page_con .user_info_con .title{
+    overflow:hidden;
+    margin-bottom:32px;
+}
+
+.cart_page_con .user_info_con .title .tit{
+    height:20px;
+    line-height:20px;
+    float:left;
+    font-size:16px;
+}
+ 
+.cart_page_con .user_info_con .title .txt{
+    height:20px;
+    line-height:20px;
+    font-size:12px;
+    color:#E61D40;
+    font-size:12px;
+    float:left;
+    margin-left:10px;
+}
+
+.cart_page_con .user_info_con .form_con .put_val{
+    font-size: 14px;
+    color: #1a1a1a;
+}
+.cart_page_con .user_info_con .form_con .submit_btn{
+    background:#333;
+}
+
+.cart_page_con  .user_info_con .message_title{
+   margin-top:60px;
+}
+.cart_page_con  .user_info_con .message_title .title{
+   font-size:17px;
+   margin-bottom:20px;
+   font-size:14px;
+
+
+   font-size: 16px;
+}
+.cart_page_con  .user_info_con .message_title .txt{
+    margin-bottom:5px;
+    color:#666;
+ 
+    font-size: 14px;
+}
+
+
+
+.user_form_com{
+   display:none;
+}
+.user_form_com.on{
+
+    display: block;
+}
+.user_form_com .title .tit{
+    color: #1a1a1a;
+    font-size: 16px !important;
+}
+
+.user_info_text_con{
+    display: none;
+}
+
+.user_info_text_con.on{
+    display: block;
+}
+.user_info_text{
+    overflow: hidden;
+}
+ 
+ 
+.cart_page_con .user_info_text > li .title_tit{
+    display: block;
+    margin-right: 10px;
+    width: 62px;
+    float: left;
+ 
+}
+.cart_page_con .user_info_text > li .title_txt{
+    display: block;
+    float: left;
+ 
+}
+ 

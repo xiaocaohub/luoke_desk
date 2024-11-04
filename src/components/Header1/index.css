@@ -1,0 +1,131 @@
+.header_con{
+    width:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:20;
+    border-bottom:1px solid #e1e1e1;
+    border:1px solid brown;
+}
+.header_con .header_top{
+    height:40px;
+    line-height:40px;
+    background:#333;
+}
+.header_con .header_top .title{
+    color:#C6A189;
+    float:left;
+}
+.header_con .header_top .login_btn{
+    float:right;
+    margin-left:29px;
+    color:#999;
+    letter-spacing: 2px;
+
+    cursor:pointer;
+}
+.header_con .header_top .login_btn:hover{
+    color:#fff;
+    transition:all 0.5s;
+}
+
+.header_con .header_top .header_img{
+    display:block;
+    float:right;
+    color:#fff;
+}
+
+
+
+.header_con .header_bottom {
+    padding:15px 0;
+    background:#fff;
+}
+
+.header_con .header_bottom .logo{
+
+    float:left;
+    display:block;
+    width:12.7%;
+    overflow:hidden;
+    height:80px; 
+    
+    background: url("../../assets/logo.png") no-repeat center;
+    background-size: 100% ;
+}
+
+
+.header_con .header_bottom .logo_img{
+    display:block;
+    
+    width:100%;
+    float: left;
+    object-fit: cover;
+    height: 100%;
+} 
+
+.header_con .header_bottom .nav_list{
+    width:55%;
+    overflow:hidden;
+    float:left;
+    margin-left:4.2%;
+    margin-top:1.71%;
+}
+
+.header_con .header_bottom .nav_list > li{
+    
+
+    border-bottom:4px solid transparent;
+    height:37px;
+    line-height:37px;
+    float:left;
+    color:#1A1A1A;
+    margin-right:7%;
+    font-size:16px;
+    overflow:hidden;
+    cursor:pointer;
+    text-align:center;
+}
+.header_con .header_bottom .nav_list > li:first-child{
+    margin-left:0;
+}
+.header_con .header_bottom .nav_list > li.on{
+    font-weight:bold;
+    font-size:20px;
+    border-bottom-color:#C6A189;   
+}
+.header_con .header_bottom .nav_list > li:hover{
+    color:#C6A189;
+}
+.header_con .header_bottom .cart_logo{
+   float:right;
+   margin-right: 8px;
+   margin-top:1.92%;
+}
+.header_con .header_bottom .search_con{
+   width:17%;
+   float:right;
+   margin-top:1.70%;
+   margin-right:2%;
+}
+.header_con .header_bottom .search_con .search{
+   display:block;
+   width:78%;
+   height:40px;
+   line-height:40px;
+   text-indent:20px;
+   float:right;
+   outline:none;
+   background: #F5F5F5;
+   border:none;
+   border-top-left-radius:40px;
+   border-bottom-left-radius:40px;
+}
+.header_con .header_bottom .search_con .btn{
+   width:21.1%;
+   height:40px;
+   background:#333 url("../../assets/search.png") no-repeat center;
+   float:right;
+   border-top-right-radius:40px;
+   border-bottom-right-radius:40px;
+}

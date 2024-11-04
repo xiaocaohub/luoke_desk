@@ -1,0 +1,139 @@
+.cart_page_con{
+    font-size:36px;
+    background:#F5F5F5;
+
+    margin-top: 40px;
+}
+
+.cart_page_con .search_con{
+    overflow:hidden;
+    background:#fff;
+    margin:20px 0;
+    padding:20px;
+}
+.cart_page_con .search_con .title{
+    height:40px;
+ 
+    line-height:40px;
+    font-size:18px;
+    float:left;
+}
+.cart_page_con .search_btn{
+    width:51px;
+    height:40px;
+
+    float:right;
+    background:#333 url("../../assets/search.png") no-repeat center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor:pointer;
+}
+.cart_page_con .serach_put{
+    width:255px;
+    height:40px;
+    float:right;
+    border-right:none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+
+
+.cart_page_con  .total_con{
+   padding:29px 0;
+   background:#fff;
+   font-size:14px;
+
+}
+
+.total_con_content{
+    position: relative;
+}
+.cart_page_con  .total_con .item{
+    height:29px;
+    line-height:29px;
+    border:1px solid transparent;
+}
+.cart_page_con  .total_con .select_all{
+ 
+    cursor:pointer;
+    background:url("../../assets/icon/icon_select.png") no-repeat left center;
+    float:left;
+    padding-left: 29px;
+    margin-top: 6px;
+ 
+}
+
+
+.cart_page_con  .total_con .select_all.on{
+    background:url("../../assets/icon/icon_select_on.png") no-repeat left center;
+    padding-left: 29px;
+}
+.cart_page_con  .total_con .delete_all{
+   float:left;
+   margin-left:25px;
+   cursor:pointer;
+   margin-top: 6px;
+
+   color: #666;
+}
+.cart_page_con  .total_con .total_count{
+   float:left;
+   margin-left:29px;
+   position:relative;
+   margin-top: 6px;
+   color: #666;
+ 
+   position: relative;
+   top:-2px;
+}
+
+.cart_page_con  .total_con .total_count .count{
+    font-weight:bold;
+}
+.cart_page_con  .total_con .total_count .count span{
+    font-size: 18px;
+    color: #1a1a1a;
+}
+.cart_page_con  .total_con .total_con_content  .pay_btn{
+    width:124px;
+    height:42px ;
+    line-height:42px ;
+    text-align:center;
+    background:#333;
+    color:#fff;
+    /* position:absolute;
+    right:0;
+    top:-5px; */
+    float: right;
+    border-radius:5px;
+    overflow:hidden;
+    cursor:pointer;
+}
+.cart_page_con  .total_con .total_money{
+    font-size:17px;
+    color:#E61D40;
+    display:block;
+    float:right;
+    margin-right:155px;
+}
+.cart_page_con  .total_con  .total_money_tit{
+    float:right;
+}
+.cart_page_con  .total_con .good_money{
+    float:right;
+    margin-right:29px;
+    margin-top: 6px;
+    color: #666;
+}
+.cart_page_con  .total_con  .vol{
+   float:right;
+   margin-right:25px;
+   margin-top: 6px;
+   color: #666;
+}
+.cart_page_con  .total_con  .good_money span,
+.cart_page_con  .total_con  .vol span{
+    color:#1a1a1a;
+    
+}

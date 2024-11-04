@@ -1,0 +1,27 @@
+*{margin:0;padding:0;}
+ul{list-style:none;}
+html {
+   
+   font-family:"PingFang SC-Regular";
+   /* font-size:16px; */
+   font-size:10px;
+}
+
+.more_btn{
+   display:block;
+   width:152px;
+   height:40px;
+   line-height:40px;
+   text-align:center;
+   border-radius:40px;
+   border:1px solid #C6A189 ;
+   font-size:16px;
+   color:#C6A189;
+   cursor:pointer;
+}
+
+.more_btn:hover{
+   background:#C6A189;
+   color:#fff;
+   transition:all 0.5s;
+}

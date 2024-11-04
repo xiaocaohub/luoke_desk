@@ -1,0 +1,21 @@
+.product_room_con{
+    background:#F5F5F5;
+}
+
+.product_list{
+    margin-top:20px;
+    overflow:hidden; 
+    padding-bottom: 3px;
+}
+  
+.page_con{
+    margin:5% auto 100px;
+    text-align:center;
+}
+
+
+
+.page_con .page{
+    display: block;
+    margin:0 auto;
+}

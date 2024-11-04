@@ -1,0 +1,83 @@
+.password_shadow_con{
+    width:100%;
+    height:100%;
+
+    position:absolute;
+
+    left:0;
+    top:0;
+    z-index: 20;
+}
+.password_shadow_con .shadow{
+    width:100%;
+
+    height:100%;
+    position: absolute;
+
+    left:0;
+
+    top:0;
+    
+    background-color: #000;
+
+
+    opacity: 0.7;
+}
+
+.password_shadow_con  .form_con{
+    width:400px;
+    position:absolute;
+    left:50%;
+    margin-left: -220px;
+    top:50%;
+    margin-top: -150px;
+    background: #fff;
+    padding:20px;
+
+    z-index: 1;
+}
+
+.password_shadow_con  .form_con .title{    
+    height: 29px;
+    line-height: 29px;
+    font-size: 16px;
+    
+    font-weight: bold;
+  
+    margin-bottom: 40px;
+}
+.password_shadow_con  .form_con .pass_word{
+    display: block;
+    width:99%;
+    height:42px;
+    border:1px solid #E1E1E1;
+    text-indent: 12px;
+    outline: none;
+}
+.password_shadow_con  .form_con .title .close_btn{
+    display: block;
+    width:25px;
+
+    height: 25px;
+    float: right;
+
+    cursor: pointer;
+    background: url("../../../assets/icon/close_btn.png") no-repeat center;
+    margin-top:4px;
+}
+.password_shadow_con  .form_con  .sub_btn{
+    height: 50px;
+    line-height: 50px;
+
+    text-align: center;
+    background: #333;
+    color:#fff ;
+
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    margin-top:27px;
+
+    margin-bottom: 20px;
+}

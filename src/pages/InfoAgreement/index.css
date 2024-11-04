@@ -1,0 +1,10 @@
+.agreement_con{
+    position: relative;
+    
+    top:-162px;
+}
+
+.agreement_con h2{
+    text-align:center;
+    margin-top:40px;
+}

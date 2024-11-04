@@ -1,0 +1,88 @@
+.recommende_good_con {
+    background:#F5F5F5 ;
+}
+.recommende_good_con .banner{
+    position:relative;
+    background:#e5e5e5;
+    text-align:center;
+    color:#fff;
+}
+.recommende_good_con .banner img{
+    width:100%;
+    display:block;
+}
+  
+
+
+.big_room_content_con{
+    padding-bottom:150px;
+}
+.recommende_good_con .room_list_con{ 
+    background:#fff;
+    overflow: hidden;
+}
+
+.recommende_good_con .room_list_con .room_list {
+   width:80%;
+   overflow:hidden;
+   margin:80px auto;
+}
+.recommende_good_con .room_list_con .room_list > li{
+    width:32%;
+    float:left;
+    margin-left:2%;
+    cursor:pointer;
+    overflow:hidden;    
+    position:relative;
+    border-radius:10px;
+}
+
+
+
+.recommende_good_con .room_list_con .room_list > li:first-child{
+    margin-left:0;
+}
+.recommende_good_con .room_list_con .room_list > li .room_img{
+    display:block;
+    width:100%;
+}
+.recommende_good_con .room_list_con .room_list > li:hover .room_img{
+    transform:scale(1.05);
+    transition:all 0.5s;
+}
+
+.recommende_good_con .room_list_con .room_list > li .text_con{
+   width:100%;
+   height:100%;
+   position:absolute;
+   left:0;
+   top:0;
+ 
+   text-align:center;
+}
+.recommende_good_con .room_list_con .room_list > li .text_con .title{
+   height:28px;
+   line-height:28px;
+   font-size:24px;
+   overflow:hidden;
+   margin-top:20%;
+}
+.recommende_good_con .room_list_con .room_list > li .text_con  .txt{
+   height:19px;
+   line-height:19px;
+   overflow:hidden;
+   font-size:16px;
+   text-transform:uppercase;
+   margin-top:10px;
+}
+ 
+.recommende_good_con .big_room_con{
+   margin-top:80px;
+}
+.recommende_good_con .good_list{
+   overflow:hidden;
+   background:#fff;
+   padding-bottom:3.2%;
+   border-bottom-left-radius:10px;
+   border-bottom-right-radius:10px;
+}

@@ -1,0 +1,294 @@
+.offline_con{
+   
+}
+
+.offline_con .balance_con{
+    overflow:hidden;
+    background:#fff;
+    position:relative;
+    padding:20px;
+    display:none;
+}
+.offline_con .balance_con .balance{
+    width:260px;
+    float:left;
+    height:74px;
+    padding:28px 20px;
+    border:1px solid #C6A189;
+    border-radius:5px;
+    position:relative;
+    cursor:pointer;
+  
+}
+.offline_con .balance_con .balance.on{
+    background:url("../../../assets/icon/pay_select_on.png") no-repeat right top;
+}
+.offline_con .balance_con .balance .title{
+    height:29px;
+    line-height:29px;
+    background:url('../../../assets/icon/wallet.png') no-repeat left center;
+    font-size:18px;
+    padding-left:50px;
+}
+.offline_con .balance_con .balance .money{
+    font-size:24px;
+    font-weight:bold;
+ 
+    color:#E61D40;
+ 
+ 
+    margin-top:10px;
+    padding-left:50px;
+    overflow:hidden;
+}
+
+.offline_con .balance_con .balance  .unit{
+
+    font-size:12px;
+}
+
+.offline_con .balance_con .balance_pay{
+    position:absolute;
+    bottom:20px;
+    right:20px;
+}
+.offline_con .balance_con .balance_pay span{
+    color:#E61D40;
+    font-weight:bold;
+}
+
+.offline_con .pay_list{
+    overflow:hidden;
+    border:1px dashed #E1E1E1;
+    padding:20px;
+    border-left:0;
+    border-right:0;
+    background:#fff;
+    position:relative;
+    font-size: 14px;
+}
+.offline_con .pay_list > li{
+    width:17.5%;
+    border-radius:5px;
+    height:60px;
+    line-height:60px;
+    border:1px solid #E1E1E1;
+    margin-right:20px;
+    float:left;
+    cursor:pointer;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items: center;
+}
+.offline_con .pay_list > li img{
+    margin-top:5px;
+    width:50px;
+    height: 50px;
+    height:auto;
+    margin-right:9.5%;
+}
+.offline_con .pay_list > li .txt{
+    position: relative;
+    top:3px;
+}
+.offline_con .pay_list > li.on{
+    background:#FFF9F6;
+    border-color:#C6A189;
+}
+.offline_con .pay_list .money{
+    position:absolute;
+    right:20px;
+    bottom:20px;
+ 
+}
+.offline_con .pay_list .money span{
+    color:#E61D40;
+    font-weight:bold;
+}
+.offline_con .line{
+    height:29px;
+    background:#fff;
+}
+.offline_con  .pay_btn{
+    width:200px;
+
+    height:42px;
+
+    line-height:42px;
+    text-align:center;
+    overflow:hidden;
+    border-radius:5px;
+    background:#1A1A1A;
+    color:#fff;
+    float:right;
+    margin-top:29px;
+    cursor:pointer;
+    margin-bottom:100px;
+}
+
+.offline_con  .bank_info_con{
+   background:#fff;
+   margin-top:20px;
+   font-size: 14px;
+}
+.offline_con .bank_info {
+   border-bottom:1px solid #E1E1E1;
+   padding:8px 0 20px 95px;
+   background:url("../../../assets/icon/gsyh.png") no-repeat 20px center;
+}
+
+.offline_con .bank_info p{
+ 
+    margin-top:12px;
+}
+
+
+
+
+
+.offline_con .upload_con{
+ 
+    color:#666;
+    padding:20px;
+}
+.offline_con .upload_con > li{
+    overflow:hidden;
+    margin-bottom:20px;
+    display: flex;
+
+    
+}
+.offline_con .upload_con > li .title{
+    width:90px;
+
+    height:32px;
+    line-height:32px;
+    float:left;
+
+    text-align:right;
+    overflow:hidden;
+    margin-right:20px;
+ 
+}
+
+.offline_con .upload_con > li .bank_name{
+   display: block;
+   float:left;
+   width:299px;
+   border-radius:0;
+   height: 32px;
+   line-height: 32px;
+
+   border: 1px solid #E1E1E1;
+   outline: none;
+   border-radius: 6px;
+}
+.offline_con  .date_con{
+    display:block;
+    width:299px;
+    height: 32px;
+    outline: none;
+    border-radius: 6px;
+    border:1px solid #d9d9d9;
+}
+.offline_con .upload_con > li .txt{
+   max-width:36%;
+   line-height:32px;
+   float:left;
+   margin-left:20px;
+   color: #999;
+   font-size: 12px;
+}
+
+.offline_con .upload_con > li .img_txt{
+ 
+   
+   display: flex;
+   flex-direction: row;
+   align-items:end;
+ 
+}
+ 
+.offline_con .upload_con > li .date{
+   width:299px;
+   float:left;
+}
+.offline_con .upload_con > li .avatar-uploader{
+   float:left;
+}
+
+.offline_con .upload_con > li .upload_btn{
+    width:100px;
+    height:100px;
+    float:left;
+    font-size:100px;
+    background:url("../../../assets/icon/add_pic.png") no-repeat center center;
+    position:relative;
+}
+.offline_con .upload_con > li .upload_btn.on{
+
+    display: none;
+}
+
+.offline_con .upload_con > li .img_list{
+    height:100px;
+    overflow:hidden;
+    float:left;
+}
+.offline_con .upload_con > li .img_list > li{
+    width:100px;
+    height:100px;
+    float:left;
+    margin-right:10px;
+    position:relative;
+    cursor:pointer;
+}
+.offline_con .upload_con > li .img_list > li .delete{
+    position:absolute;
+    left:50%;
+    top:50%;
+
+    margin-left:-17px;
+    margin-top:-17px;
+
+    color:red;
+    z-index:2;
+    font-size: 34px;
+    display: none;
+ 
+}
+
+.offline_con .upload_con > li .img_list > li:hover .delete{
+    display: block;
+}
+.offline_con .upload_con > li .img_list > li img{
+    display: block;
+    width:100%;
+    height:100%;
+}
+.offline_con .upload_con > li .upload_btn .file{
+    display:block;
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    z-index:1;
+    opacity: 0;
+}
+
+.offline_con   .sub_btn{
+    width:200px;
+    height:42px;
+    line-height:42px;
+    text-align:center;
+    background:#1A1A1A;
+    color: #fff;
+    overflow:hidden;
+    float:right;
+    border-radius:5px;
+    margin:29px 0 100px;
+    font-size: 16px;
+    cursor:pointer;
+}

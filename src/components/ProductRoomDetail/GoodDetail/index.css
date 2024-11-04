@@ -1,0 +1,173 @@
+.productroom_detail_page .good_edit_detail{
+    margin-bottom:50px;
+    margin-top:20px;
+}
+
+.productroom_detail_page .good_edit_detail .content{
+    overflow:hidden;
+}
+.productroom_detail_page .good_edit_detail .content > .left{
+    width:72.5%;
+    float:left;
+    border-radius: 12px;
+}
+
+.productroom_detail_page .good_edit_detail .content > .left img {
+ 
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+.productroom_detail_page .good_edit_detail .content > .left .ql-align-center img{
+    display:block;
+
+    width:100%;
+}
+.productroom_detail_page .good_edit_detail .content > .left .ql-align-center img:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.productroom_detail_page .good_edit_detail .content > .left .ql-align-center img:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.productroom_detail_page .good_edit_detail .content > .right{
+   width:26%;
+
+   border-radius:10px;
+
+
+   height:955px;
+   overflow-y:auto;
+   float:right;
+   background:#FFF;
+}
+.productroom_detail_page .good_edit_detail .content > .right .title_top{
+   
+   height:54px;
+   line-height:54px;
+   border-bottom:1px solid #E1E1E1;
+   padding:0 20px;
+}
+.productroom_detail_page .good_edit_detail .content > .right .title_top .tit{
+   float:left;
+   font-size:16px;
+
+   color: #1A1A1A;
+}
+.productroom_detail_page .good_edit_detail .content > .right .title_top .show_btn{
+    background:url("../../../assets/icon/icon_down.png") no-repeat right center;
+    padding-right:25px;
+    float:right;
+    color:#E8A468;
+    cursor:pointer;
+}
+.productroom_detail_page .good_edit_detail .content > .right .title_top .show_btn.on{
+    background:url("../../../assets/icon/icon_up.png") no-repeat right center;
+}
+
+.productroom_detail_page .good_edit_detail .content > .right .img_txt_con{
+    /* height:750px;
+    overflow-y:auto; */
+ 
+}
+.productroom_detail_page .good_edit_detail .content > .right .img_list{
+    /* overflow:hidden; */
+    padding:20px 20px 0;
+    display: none;
+}
+.productroom_detail_page .good_edit_detail .content > .right .img_list .err_msg{
+    text-align:center;
+    padding:20px;
+}
+.productroom_detail_page .good_edit_detail .content > .right .img_list .img_con{
+    width:47%;
+    height:150px;
+    margin-bottom:5%;
+    cursor:pointer;
+}
+.productroom_detail_page .good_edit_detail .content > .right .img_list .img_con:nth-child(odd) {
+    float:left;
+}
+.productroom_detail_page .good_edit_detail .content > .right .img_list .img_con:nth-child(even) {
+    float:right;
+}
+.productroom_detail_page .good_edit_detail .content > .right .img_list .img_con .img{
+    object-fit: cover;
+}
+ 
+.productroom_detail_page .good_edit_detail .content > .right .text_con{
+    /* overflow:hidden; */
+}
+.productroom_detail_page .good_edit_detail .content > .right .text_con .tit{
+    height:54px;
+    line-height:54px;
+    font-size:16px;
+    padding:0 20px;
+    color: #1A1A1A;
+    border-bottom:1px solid #E1E1E1;
+    text-align:left;
+}
+.productroom_detail_page .good_edit_detail .content > .right .text_con .txt_list{
+    padding:20px;
+}
+.productroom_detail_page .good_edit_detail .content > .right .text_con .txt_list >li{
+    font-size:14px;
+    overflow:hidden;
+    margin-bottom:10px;
+ 
+}
+.productroom_detail_page .good_edit_detail .content > .right .text_con .txt_list >li .title{
+    color:#999;
+    margin-left:5px;
+    display:block;
+    width:29%;
+    float:left;
+    height:28px;
+    line-height:28px;
+    
+    text-align:right;
+    padding-right:9px;
+}
+.productroom_detail_page .good_edit_detail .content > .right .text_con .txt_list >li  .txt{
+    width:65%;
+    line-height:19px;
+    float:right;
+    margin-top:5px;
+    display:block;
+ 
+    word-break: break-all;
+}
+ 
+
+
+
+::-webkit-scrollbar {
+    width: 12px;  /* 宽度 */
+  }
+   
+  /* 滚动条轨道 */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 颜色 */
+  }
+   
+  /* 滚动条滑块 */
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* 颜色 */
+  }
+   
+  /* 滚动条滑块hover效果 */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* 颜色 */
+  }
+   
+  /* Firefox 的滚动条样式 */
+  * {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: #888 #f1f1f1; /* 滑块颜色 轨道颜色 */
+  }
+   
+  /* IE 和 Edge 的滚动条样式 */
+  body {
+    -ms-overflow-style: scrollbar; /* 或者 "border" 或 "none" */
+  }

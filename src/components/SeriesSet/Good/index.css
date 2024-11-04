@@ -1,0 +1,66 @@
+.series_con .series_list_con .good_list  .good{
+    width:30.5%;
+    border:1px solid #E1E1E1;
+    float:left;
+    margin-left:2% ;
+    margin-top:2%;
+    overflow:hidden;
+    text-align:center;
+    border-radius:10px;
+}
+.series_con .series_list_con .good_list  .good:hover{
+    border-color:#C6A189;
+}
+.series_con .series_list_con .good_list  .good .good_img{
+   display:block;
+
+   width:100%;
+
+   object-fit: cover;
+}
+
+.series_con .series_list_con .good_list  .good .title{
+    font-size:18px;
+    height:21px;
+
+    line-height:21px;
+    overflow:hidden;
+    
+    margin-top:20px;
+    color:#1A1A1A;
+    font-weight:bold;
+}
+.series_con .series_list_con .good_list  .good .txt{
+    height:20px;
+    line-height:20px;
+    
+    font-size:16px;
+    margin:10px 0;
+
+
+  
+    text-align:center;
+    overflow:hidden;
+    color:#999;
+ 
+}
+
+.series_con .series_list_con .good_list  .good  .total{
+
+    width:137px;
+    height:32px;
+    line-height:32px;
+    font-size:16px;
+    color:#999;
+    overflow:hidden;
+    margin:20px auto 29px;
+    border:1px solid #CCC;
+    border-radius:32px;
+    background:#FAFAFA;
+}
+.series_con .series_list_con .good_list  .good:hover .total{
+    background:#FFF9F5;
+    color:#C6A189;
+    border-color:#C6A189;
+}
+

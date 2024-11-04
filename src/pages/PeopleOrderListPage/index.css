@@ -1,0 +1,60 @@
+.people_order_list_page_con{
+    min-height: 500px;
+}
+
+
+.people_order_list_page_con .table_con{
+    background:#fff;
+    padding-top:83px;
+}
+.people_order_list_page_con .nav_list{
+    border-bottom:1px solid #E1E1E1;
+    overflow:hidden;
+    padding-top:20px;
+
+    position: fixed;
+    width: 100%;
+    top:80px;
+    left: 12%;
+    z-index: 10;
+    background: #fff;
+}
+.people_order_list_page_con .nav_list > li{
+    width:61px;
+    height:50px;
+    line-height:50px;
+
+    border-bottom:2px solid transparent;
+    font-size:14px;
+    float:left;
+    text-align:center;
+    margin-left:20px;
+
+    cursor: pointer;
+}
+.people_order_list_page_con .nav_list > li.on{
+    border-bottom:2px solid #C6A189;
+}
+
+
+.people_order_list_page_con .order_table{
+    margin-top:10px;
+    margin-left:20px;
+    margin-right: 20px;
+    
+    border:1px solid #E1E1E1;
+}
+
+
+
+.people_order_list_page_con .order_table .operate_btn{
+   margin: 5px 0;
+}
+
+
+
+
+.people_order_list_page_con .page_con{
+   text-align: center;
+   padding-bottom: 50px;
+}

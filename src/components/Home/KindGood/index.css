@@ -1,0 +1,37 @@
+.king_good_list_con .good_list .kind_good{
+    width:32.6%;
+    float:left;
+    margin-bottom:31px;
+    overflow:hidden;
+    margin-left:1%;
+}
+.king_good_list_con .good_list .kind_good:nth-child(3n+1) {
+    margin-left:0;
+}
+.king_good_list_con .good_list .kind_good .good_img{
+    display:block;
+    width:100%;
+}
+.king_good_list_con .good_list .kind_good .text_con{
+
+    height:100px;
+    padding:0 20px;
+ 
+}
+.king_good_list_con .good_list .kind_good:hover{
+    box-shadow: 2px 5px 7px #e5e5e5;
+    color:#C6A189;
+}
+.king_good_list_con .good_list .kind_good .text_con .txt{
+    height:21px;
+    line-height:21px;
+    font-size:18px;
+    overflow:hidden;
+    margin:23px 0 10px;
+}
+.king_good_list_con .good_list .kind_good .text_con .price{
+   height:32px;
+   line-height:32px;
+   font-size:28px;
+   overflow:hidden;
+}

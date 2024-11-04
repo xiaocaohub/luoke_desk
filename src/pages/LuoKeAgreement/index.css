@@ -1,0 +1,24 @@
+.agreement_con{
+    position: relative;
+    top:-162px;
+    font-size:14px;
+}
+
+.agreement_con h3{
+    margin:40px 0 20px;
+}
+.agreement_con p{
+    line-height:25px;
+    text-indent:25px;
+    margin-bottom:15px;
+}
+
+
+
+
+.agreement_con p span{
+    display: block;
+
+    margin-left:25px;
+}
+

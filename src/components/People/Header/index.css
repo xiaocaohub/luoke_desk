@@ -1,0 +1,196 @@
+.people_header_con{
+    width:100%;
+    padding:12px 0;
+    background:#333;
+    float: left;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+ .people_header_con .logo_a{
+    float:left;
+    margin-top:9px;
+ }
+ 
+.people_header_con .logo{
+    width:218px;
+    display:block;
+    float:left;
+    margin-left:24px;
+}
+.people_header_con .title{
+    float:left;
+ 
+    color:#fff;
+    font-size:18px;
+    border-left:1px solid #fff;
+
+    float:left;
+    height:42px;
+    line-height:42px;
+
+    margin:7px 0 5px 29px;
+    padding-left:20px;
+}
+
+
+.people_header_con .top_nav{ 
+    float:left;
+    margin-left:2%;
+}
+
+.people_header_con .top_nav li{
+
+    float:left;
+    color:#fff;
+    text-align:center;
+    font-size:14px;
+    margin-right: 80px;
+    cursor: pointer;
+}
+
+.people_header_con .top_nav li.on{
+
+    color: #C6A189;
+}
+.people_header_con .top_nav li .icon{    
+    width:29px;
+    height:29px;
+    background:url("../../../assets/icon/people_header_nav2.png") no-repeat center;
+}
+.people_header_con .top_nav li.on .icon{    
+    background:url("../../../assets/icon/people_header_nav1_on.png") no-repeat center;
+}
+.people_header_con .top_nav li:nth-child(1) .icon{   
+    background:url("../../../assets/icon/people_header_nav1.png") no-repeat center;
+}
+.people_header_con .top_nav li:nth-child(1):hover .icon{   
+    background:url("../../../assets/icon/people_header_nav1_on.png") no-repeat center;
+}
+.people_header_con .top_nav li:nth-child(2) .icon{   
+    background:url("../../../assets/icon/people_header_nav2.png") no-repeat center;
+ }
+ .people_header_con .top_nav li:nth-child(2):hover .icon{   
+    background:url("../../../assets/icon/people_header_nav2_on.png") no-repeat center;
+ }
+ .people_header_con .top_nav li:nth-child(3) .icon{   
+  
+    background:url("../../../assets/icon/people_header_nav3.png") no-repeat center;
+ }
+ .people_header_con .top_nav li:nth-child(3):hover .icon{   
+    background:url("../../../assets/icon/people_header_nav3_on.png") no-repeat center;
+ }
+ .people_header_con .top_nav li:nth-child(4) .icon{
+    background:url("../../../assets/icon/people_header_nav4.png") no-repeat center;
+ }
+
+ .people_header_con .top_nav li:nth-child(4):hover .icon{
+    background:url("../../../assets/icon/people_header_nav4_on.png") no-repeat center;
+ }
+
+ .people_header_con .top_nav li:nth-child(1),
+ .people_header_con .top_nav li:nth-child(2),
+ .people_header_con .top_nav li:nth-child(4) {
+    display: none;
+ }
+ .people_header_con .top_nav li.on .icon {
+    background:url("../../../assets/icon/people_header_nav3_on.png") no-repeat center;
+ }
+.people_header_con .top_nav li p{
+    margin-top:5px;
+    /* color: #999; */
+    color: #C6A189;
+}
+
+.people_header_con .top_nav li  a{
+    color: #999;
+    text-decoration: none;
+}
+
+.people_header_con .top_nav li:hover p,
+.people_header_con .top_nav li:hover a p{
+    color: #C6A189;
+}
+.people_header_con  .out_btn{
+    width: 72px;
+    height: 32px;
+    line-height:32px;
+    text-indent: 33px;
+    border-radius: 6px;
+    float:right;
+    font-size:14px;
+    background:#4A4A4A url("../../../assets/icon/esc.png") no-repeat 10px center;
+   
+    color:#999;
+    margin-top:12px;
+    cursor:pointer;
+    margin-right:24px;
+}
+.people_header_con .phone_con{
+    width:179px;
+    float:right;
+    margin-right: 20px;
+
+    position:relative;
+    margin-top:15px;
+
+    background: url("../../../assets/icon/chevron_on.png") no-repeat right center;
+    cursor: pointer;
+}
+.people_header_con .phone_con:hover {
+    background: url("../../../assets/icon/chevron_down.png") no-repeat right center;
+}
+.people_header_con .phone_con .phone_title{
+    height:29px;
+    line-height: 29px;
+    font-size: 14px;
+    color:#C6A189;
+
+
+    text-align: center;
+}
+.people_header_con .phone_con .btn_list{
+    overflow:hidden;
+    position:absolute;
+    width:100%;
+    top:29px;
+    left:0;
+    display: none;
+}
+
+.people_header_con .phone_con:hover .btn_list{
+    display: block;
+}
+.people_header_con .phone_con .btn_list > li{
+    height:32px;
+    line-height:32px;
+    text-align:center;
+    cursor: pointer;
+    background: #EFEFEF;
+    color:#333;
+    overflow:hidden;
+    font-size:14px;
+}
+.people_header_con .phone_con .btn_list > li a{
+    color:#333;
+    text-decoration: none;
+}
+.people_header_con .phone_con .btn_list > li.out_b{
+    color:#C6A189;
+    background:#333;
+}
+.go_index{
+    display:block;
+    margin-top: 17px;
+    float: right;
+
+
+    font-size:18px;
+    color: #C6A189;
+    background:url("../../../assets/icon/back_mall.png") no-repeat left center;
+    padding-left: 32px;
+    margin-right: 40px;
+}

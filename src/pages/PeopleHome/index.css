@@ -1,0 +1,15 @@
+.people_con{
+    width:100%;
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    border:1px solid brown;
+}
+.header_con_top{
+    height:80px;
+
+    background:#333;
+}

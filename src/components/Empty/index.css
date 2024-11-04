@@ -1,0 +1,17 @@
+.empty_con{
+    min-height:320px;
+ 
+}
+.empty_con .empty_img{
+
+    display: block;
+    margin:40px auto 0;
+}
+.empty_con .tit{
+    height:52px;
+    line-height: 52px;
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+
+}

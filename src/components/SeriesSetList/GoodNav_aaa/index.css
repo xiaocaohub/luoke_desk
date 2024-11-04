@@ -1,0 +1,115 @@
+.product_room_con .good_nav_con{
+ 
+    /* border:1px solid brown; */
+}
+
+.product_room_con .breadcrumb_con{
+    overflow:hidden;
+    padding:20px 0;
+
+}
+.product_room_con .breadcrumb_con .breadcrumb{
+    float:left;
+}
+
+
+
+.product_room_con .breadcrumb_con .show_btn_a{
+    float:right;
+    color:#E8A468;
+}
+
+.product_room_con .good_nav{ 
+    background:#fff;
+    border-radius:10px;
+    /* border:1px solid brown; */
+}
+
+.product_room_con .good_nav .nav_list_con{
+    overflow:hidden;
+    /* border:1px solid brown; */
+    font-size:14px;
+}
+ 
+.product_room_con .good_nav .nav_list_con .title{
+    width:10%;
+    height:100%;
+ 
+ 
+    line-height:52px;
+    text-align:center;
+    float:left;
+}
+
+
+.product_room_con .good_nav .nav_list_con .nav_list{
+    width:75%;
+    float:left;
+}
+.product_room_con .good_nav .nav_list_con.on{
+    border:1px solid  #E8A468;
+    padding-right:15px;
+}
+.product_room_con .good_nav .nav_list_con .nav_list > li{
+    float:left;
+    margin-right:3%;
+
+    margin-top:12px;
+    padding:3px 10px;
+    cursor:pointer;
+    border-radius:5px;
+}
+.product_room_con .good_nav .nav_list_con .nav_list > li:hover{
+    color:#E8A468;
+    background:#F6F1E8;
+}
+.product_room_con .good_nav .nav_list_con .nav_list > li .select{
+    width:15px;
+    height:15px;
+    float:left;
+    background:url("../../../assets/check_false_icon.png") no-repeat center;
+    margin-right:5px;
+    margin-top:2px;
+}
+.product_room_con .good_nav .nav_list_con .nav_list > li .select.on{
+    background:url("../../../assets/check_true_icon.png") no-repeat center;
+}
+.product_room_con .good_nav .nav_list .btn_group{
+    width:100%;
+    float:left;
+    margin-top:20px;
+    display: flex;
+    justify-content:center;
+    padding-bottom:20px;
+}
+.product_room_con .good_nav .nav_list .btn_group .btn{
+    padding:5px 15px;
+    margin:0 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+.product_room_con .good_nav .nav_list .btn_group .sub_btn{
+    background:#E8A468;
+    color:#fff;
+}
+.product_room_con .good_nav .nav_list .btn_group .cancel_btn{
+    color:#999;
+    border:1px solid #999;
+}
+.product_room_con .good_nav .nav_list_con .slect_more{
+    float:right;
+    border:1px solid #1A1A1A;
+    padding:3px 10px;
+    border-radius:3px;
+    cursor:pointer;
+    margin-top:12px;
+}
+.product_room_con .good_nav .nav_list_con  .show_btn{
+    float:right;
+    margin-top:15px;
+    margin-right:15px;
+    font-size:14px;
+    cursor:pointer;
+}
+
+

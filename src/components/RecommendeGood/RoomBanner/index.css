@@ -1,0 +1,77 @@
+.room_banner_con .top_title{
+    font-size:24px;
+    height:28px;
+    line-height:28px;
+    overflow:hidden;
+    color:#1A1A1A;
+}
+.room_banner_con .top_title span{
+    text-transform:uppercase;
+    font-size:16px;
+    color:#999;
+    position:relative;
+    top:-3px;
+}
+.room_banner_con .room_banner{
+    margin-top:20px;
+    position:relative;
+}
+.room_banner_con .room_banner .banner_img{
+    display:block;
+    width:100%;
+}
+.room_banner_con .room_banner  .text_con{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:1;
+}
+.room_banner_con .room_banner .big_tit{
+   height:58px;
+   line-height:58px;
+   font-size:48px;
+   margin-left:4%;
+   margin-top:8.5%;
+}
+
+
+.room_banner_con .room_banner .txt{
+   font-size:24px;
+   height:28px;
+   line-height:28px;
+
+   margin-left:4%;
+   margin-top:10px;
+}
+.room_banner_con .show_more_btn{
+    width:142px;
+    display:block;
+    text-align:center;
+    border-radius:40px;
+
+    margin-left:8.7%;
+    margin-top:1.9%;
+    
+    overflow:hidden;
+    color:#fff;
+    position:absolute;
+    height:10%;
+    display:flex;
+    align-items: center;
+    flex-direction:row;
+    justify-content:center;
+    font-size: 16px;
+    bottom:24.8%;
+    text-decoration: none;
+    background:#C6A189 url("../../../assets/icon/nt_right.png") no-repeat 86% center;
+    background-size: 20px 20px;
+}
+.room_banner_con .show_more_btn:hover {
+    background:#C6A189 url("../../../assets/icon/nt_right.png") no-repeat 86% center;
+    transition:all 0.5s;
+    color:#fff;
+    background-size: 20px 20px;
+}
+ 

@@ -1,0 +1,35 @@
+.productroom_detail_page .same_kind_con{
+    overflow:hidden;
+    background:#fff;
+}
+.same_kind_good{
+    width:14.3%;
+    float:left;
+    overflow:hidden;
+    margin-left:1.8%;
+    font-size:14px;
+}
+.same_kind_good:first-child{
+    margin-left:0;
+}
+.same_kind_good .img{
+    display:block;
+    width:100%;
+    cursor: pointer;
+}
+
+.same_kind_good .txt{
+    height:15px;
+    line-height:15px; 
+    overflow:hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    margin:15px 0 5px;
+    color:#333;
+}
+.same_kind_good .price{
+    height:17px;
+    line-height:17px;
+    overflow:hidden;
+    color:#E61D40;
+}

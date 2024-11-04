@@ -1,0 +1,32 @@
+.artist_con{
+    background:#F5F5F5;
+}
+
+.artist_con .breadcrumb_con{
+    margin:20px 0;
+}
+
+.artist_con .good_list{
+    border-radius:10px;
+    overflow:hidden;
+    background:#fff;
+  
+    margin-top:20px;
+    padding-bottom:3.2%;
+}
+
+ 
+.artist_con .artist_nav_con {
+    height:73px;
+    overflow:hidden;
+
+    background:#fff;
+    border-radius:10px;
+}
+ 
+
+
+
+ 
+
+ 

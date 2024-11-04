@@ -1,0 +1,55 @@
+.banner_con{
+    position:relative;
+}
+.banner_con .ant-carousel .slick-slide {
+    text-align: center;
+ 
+    overflow: hidden;
+}
+
+.banner_con .ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+.banner_con .banner_img{
+    display:block;
+    width:100%;
+}
+.banner_con .operate_con{
+   
+    position:absolute;
+    width:100%;
+    left:0;
+    top:0;
+}
+.banner_con .operate_con .operate{
+    position:relative;
+}
+.banner_con .operate_con .operate .btn{
+   width:40px;
+   height:40px;
+
+   position:absolute; 
+   top:320px;
+   margin-top:-20px;
+   cursor:pointer;
+}
+
+.banner_con .operate_con .operate .btn_left{
+
+
+  background: url("../../assets/left_banner1.png") no-repeat; 
+  left:10%;
+}
+
+.banner_con .operate_con .operate .btn_left:hover{
+  background: url("../../assets/left_banner2.png") no-repeat;
+  transition:all 0.3s;
+}
+.banner_con .operate_con .operate .btn_right{
+  background: url("../../assets/right_banner1.png") no-repeat;
+  right:10%;
+}
+.banner_con .operate_con .operate .btn_right:hover{
+  background: url("../../assets/right_banner2.png") no-repeat;
+  transition:all 0.3s;
+}

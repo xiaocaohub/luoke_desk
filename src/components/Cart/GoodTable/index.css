@@ -1,0 +1,188 @@
+/* .cart_page_con .good_table{
+    border:1px solid brown;
+} */
+
+.cart_page_con .good_table .header_top{
+    overflow:hidden;
+    /* border:1px solid brown; */
+    background:#EFEFEF;
+}
+
+.cart_page_con .good_table .header_top > li{
+    height:50px;
+    line-height:50px;
+    float:left;
+    font-size:14px;
+
+    text-align:center;
+    overflow:hidden;
+}
+.cart_page_con .good_table .header_top .select{
+    
+    width:5%;
+}
+.cart_page_con .good_table .header_top .info{
+   width:34%;
+}
+.cart_page_con .good_table .header_top .good_code{
+    width:19%;
+}
+.cart_page_con .good_table .header_top  .vol{
+      width:8%;
+}
+.cart_page_con .good_table .header_top .price{
+      width:9%;
+}
+
+
+
+.cart_page_con .good_table .header_top  .count{
+    width:10.4%;
+}
+.cart_page_con .good_table .header_top .sub_total{
+
+    width:8.3%;
+}
+.cart_page_con .good_table .header_top .operate{
+    width:5%;
+}
+.cart_page_con .good_table .good_list{
+    background:#fff;
+}
+
+.cart_page_con .good_table .good_list > li{
+    height:80px;
+    padding:20px 0;
+    overflow:hidden;
+    border-top:1px solid #E1E1E1;
+    font-size:12px;
+}
+/* .cart_page_con .good_table .good_list > li.on{
+    
+    display:none;
+} */
+.cart_page_con .good_table .good_list > li:first-child{
+    border:none;
+}
+.cart_page_con .good_table .good_list > li > div{
+    height:80px;
+    float:left;
+ 
+}
+.cart_page_con .good_table .good_list  .select{
+    width:5%;
+    background:url("../../../assets/icon/icon_select.png") no-repeat center;
+    cursor:pointer;
+}
+.cart_page_con .good_table .good_list  .select.on{
+    background:url("../../../assets/icon/icon_select_on.png") no-repeat center;
+}
+.cart_page_con .good_table .good_list  .info{
+    width:34%;
+}
+.cart_page_con .good_table .good_list  .info .good_img{
+    display:block;
+    width:24.5%;
+    height:100%;
+    overflow:hidden;
+    float:left;
+}
+
+.cart_page_con .good_table .good_list  .info .good_img img{
+    display:block;
+    width:100%;
+    height:100%;
+}
+.cart_page_con .good_table .good_list  .info .intro{
+    width:71%;
+    height:100%;
+    float:right;
+}
+.cart_page_con .good_table .good_list  .info .intro .txt{
+    max-height:31px;
+    line-height:15px;
+    font-size:12px;
+    overflow:hidden;
+}
+.cart_page_con .good_table .good_list  .info .intro .size{
+    max-height:31px;
+    line-height:15px;
+    color:#666;
+    margin-top:10px;
+    font-size:12px;
+    overflow:hidden;
+}
+.cart_page_con .good_table .good_list .good_code{
+    width:19%;
+    line-height:80px;    
+    text-align:center;
+    overflow:hidden;
+ 
+}
+
+.cart_page_con .good_table .good_list .vol{
+    width:8%;
+    line-height:80px;
+    text-align:center;
+    overflow:hidden;
+ 
+}
+.cart_page_con .good_table .good_list .price{
+    width:9%;
+    line-height:80px;
+
+
+    text-align:center;
+    overflow:hidden;
+ 
+}
+
+.cart_page_con .good_table .good_list .count_con{
+    width:10.4%;
+}
+.cart_page_con .good_table .good_list .count_con .btn{
+    width:25%;
+    height:31px; 
+    line-height:31px;
+    text-align:center;
+    border:1px solid #E1E1E1 ;
+    float:left;
+ 
+ 
+    overflow:hidden;
+    margin-top:23px;
+    cursor:pointer;
+}
+
+.cart_page_con .good_table .good_list .count_con .btn:first-child{
+    margin-left:9%;
+}
+.cart_page_con .good_table .good_list .count_con .count{
+    width:35%;
+ 
+    height:33px;
+    line-height:31px;
+    text-align:center;
+    float:left;
+    border:1px solid #E1E1E1 ;
+    border-left:0;
+    border-right:0;
+    border-radius:0;
+    margin-top:23px;
+}
+.cart_page_con .good_table .good_list .sub_total{
+    width:8.3%;
+    line-height:80px;
+    text-align:center;
+    color:#E61D40;
+ 
+    overflow:hidden;
+}
+.cart_page_con .good_table .good_list  .operate{
+    width:5%;
+
+    background:url("../../../assets/icon/icon_delete.png") no-repeat center;
+    cursor:pointer;
+}
+
+
