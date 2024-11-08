@@ -16,7 +16,7 @@ class Show extends React.Component {
     }
     goLoginFn = ()=> {
 
-        this.props.history.push("/login")
+        this.props.history.push("/login?id=C")
     }
     render () {
         return (

@@ -151,9 +151,9 @@ class UserInfo extends React.Component {
             message.error("请填写手机号")
             return ;
         }
-
         setStorageFn("userInfoDetail", userInfoDetail)
         this.props.setKeepFn(true)
+        
         this.setState({
             changeFlag: false
         })
@@ -368,10 +368,10 @@ class UserInfo extends React.Component {
                             </span>
                         </li>
 
-                        <li>
+                        {/* <li>
                             <span className="title_tit">备 注:</span>
                             <span className="title_txt">{this.state.userInfoDetail.remark }</span>    
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
 

@@ -46,6 +46,7 @@
 
     font-size:12px;
 }
+
 .offline_con .balance_con .balance_pay{
     position:absolute;
     bottom:20px;
@@ -125,6 +126,8 @@
    background:#fff;
    margin-top:20px;
    font-size: 14px;
+   min-height: 100px;
+   overflow: hidden;
 }
 .offline_con .bank_info {
    border-bottom:1px solid #E1E1E1;
@@ -134,16 +137,20 @@
 }
 
 .offline_con .bank_info p{
+ 
     margin-top:12px;
 }
 
-.offline_con .upload_con{ 
+
+
+
+
+.offline_con .upload_con{
+ 
     color:#666;
     padding:20px;
 }
-
 .offline_con .upload_con > li{
-
     overflow:hidden;
     margin-bottom:20px;
     display: flex;
@@ -269,7 +276,7 @@
     opacity: 0;
 }
 
-.offline_con   .sub_btn{
+.offline_con .sub_btn{
     width:200px;
     height:42px;
     line-height:42px;
@@ -283,3 +290,26 @@
     font-size: 16px;
     cursor:pointer;
 }
+.offline_con .sub_btn_dis{
+    width:200px;
+    height:42px;
+    line-height:42px;
+    text-align:center;
+  
+    color: #fff;
+    overflow:hidden;
+    float:right;
+    border-radius:5px;
+    margin:29px 0 100px;
+    font-size: 16px;
+    cursor:pointer;
+}
+.code_img{
+    display: block;
+    width: 150px;
+    height: 150px;
+
+
+    margin:50px auto;
+}
+

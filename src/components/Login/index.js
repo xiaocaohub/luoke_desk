@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useHistory} from "react-router-dom";
-import {Form, Input, Button, message} from "antd";
+import {Form, Input, Button, message, Modal} from "antd";
 
 import "./index.css";
 import checkedImg from "../../assets/check_true_icon.png";
@@ -14,7 +14,9 @@ function LoginPage (props) {
     const [phoneValue, setPhoneFn] = useState("");
     const [passWord, setPassWordFn] = useState("")
 
+    // let userType = window.location.href.split("id=")[1];
     const history = useHistory();
+ 
     function autoLoginFn () { 
         const flag = autoLoginFlag;
         setAutoLognFn(!flag)
@@ -24,12 +26,22 @@ function LoginPage (props) {
         let value = e.target.value;
         setPhoneFn(value);
     }
-
     function passWordFn (e) {
         let value = e.target.value;
         setPassWordFn(value)
     }
     function loginFn () {
+        let usertypeStr = props.usertype;
+        let currentUsertype = "";
+      
+        
+
+
+        if (usertypeStr == 'B') {
+            currentUsertype = 2 ;
+        } else if (usertypeStr == 'C') {
+            currentUsertype = 1;
+        }
         let formData = new FormData();
         formData.append("api", "app.login.login");
         formData.append("storeId", 1);
@@ -38,12 +50,53 @@ function LoginPage (props) {
 
 
         formData.append("password", passWord);
-        loginApi(formData).then(function (res) {   
+        formData.append("usertype",  props.usertype)
+
+
+
+        loginApi(formData).then(function (res) {  
+
             let data = res.data.data;
+            
+            // console.log("login")
+            // console.log(res)
+            // console.log("currentUsertype", currentUsertype)
+            // console.log("data.userType", data.userType)
+            if (!data) {
+
+                message.error("用户名或密码错")
+                return ;
+            }
+            if (data.userType != currentUsertype) {
+                 let titleMsgType = "";
+                 if (data.userType == 1) {
+                      
+                      Modal.info({
+                          title: "提示",
+                          content: "您是 C 端用户,请去 C 端登录",
+                          centered: true,
+                          onOk: function (res) {
+                               console.log(res)
+                                window.location.href = "/login?id=C";
+                          }
+                      })
+
+                      return ;
+                 }
+                 if (data.userType == 2) {
+                    Modal.info({
+                        title: "提示",
+                        content: "您是 B 端用户,请去 B 端登录",
+                        centered: true,
+                        onOk: function (res) {
+                            window.location.href = "/login?id=B";
+                        }
+                    })
+                    return ;
+                }
+            }
             setStorageFn("storeId", 1)
-
             setStorageFn("storeType", 6) 
-
             if (data && data.access_id) {
                 messageApi.open({
                     type: 'success',
@@ -52,8 +105,12 @@ function LoginPage (props) {
                 });
                 setStorageFn("token", data.access_id); 
                 setStorageFn("userInfo", JSON.stringify(data))
+
+                setStorageFn("usertype", props.usertype);
+
                 setTimeout(()=>{
-                    history.push("/");
+                    window.location.href = "/";
+
                 }, 2500)
             } else {
                 messageApi.open({
@@ -66,7 +123,7 @@ function LoginPage (props) {
     }
     return (
         <Form className="login_form_con login-form" >   
-            <div className="title">账号密码登录</div>        
+            <div className="title"> {props.usertype} 端用户账号密码登录</div>        
             <div className="put_item">
                 <Input placeholder="请输入账号" className="put_val" value={phoneValue} onChange={phoneFn}></Input>
             </div>

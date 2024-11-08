@@ -6,24 +6,25 @@ import Header from "../../components/Header";
 
 import Footer from "../../components/Footer";
 import GoodTable from "../../components/CheckCart/GoodTable";
-
 import {setStorageFn, getStorageFn} from "../../utils/localStorage";
+import PasswordShadow from "../../components/Home/PasswordShadow";
+import PasswordShadowSwitch from "../../components/Home/PasswordShadowSwitch";
 import request from "../../api/request";
 import moment from "moment";
 import zhCN from "antd/es/date-picker/locale/zh_CN";
 import 'moment/locale/zh-cn';
-import "./index.css";
-moment.locale('zh-cn')
-// import zhCN from 'antd/es/date-picker/locale/zh_CN';
 
+import "./index.css";
+
+moment.locale('zh-cn')
 class Show extends React.Component {
     constructor (props) {
-        super(props)
 
+        super(props)
         this.state = {
             cartArr: [], 
-            orderInfo: "",
 
+            orderInfo: "",
             orders: [],
             totalVolume: 0, 
             totalPrice: 0, 
@@ -33,7 +34,6 @@ class Show extends React.Component {
             userInfo: ""
         }
     }
-
     componentDidMount () {
     
     
@@ -54,7 +54,6 @@ class Show extends React.Component {
                 ids += item.id + ",";
             }
         })
-
         setTimeout(()=>{
             _this.getCartListFn(ids)
         })
@@ -73,18 +72,18 @@ class Show extends React.Component {
             data: formData
         }).then((res)=> {
             let resData = res.data.data.data || [];
-
             setStorageFn("cartArr", resData)
+
             _this.setState({
                 cartArr: resData
             }, function () {
                 _this.getSelectIdsFn()
             })
         })
-    }    
+    }
     getCartListFn = (selectId)=> {
-     
         let orderFlag = this.state.orderFlag;
+
         this.setState({
             orderFlag: false
         })
@@ -94,8 +93,8 @@ class Show extends React.Component {
         let _this = this;   
         let formData = new FormData();
         let token = getStorageFn("token");
+        
         formData.append("api", "app.orderV2.confirmOrder");
-     
         formData.append("accessId", token);  
         formData.append("storeId", 1);
         formData.append("storeType", 6);
@@ -114,6 +113,7 @@ class Show extends React.Component {
                 item.remark = "";
             })
      
+            
             let payOption = {         
                 totalVolume: resData.totalVolume, 
                 totalPrice: resData.totalPrice, 
@@ -273,10 +273,9 @@ class Show extends React.Component {
                         </ul>
                     </div>
                 </div>
-
-
-
                 <Footer></Footer>
+                { this.props.state.commonState.showSupplyPriceFlag && <PasswordShadow></PasswordShadow>}
+                { this.props.state.commonState.showSupplyPriceSwitchFlag && <PasswordShadowSwitch></PasswordShadowSwitch> }
             </div>
         )
     }

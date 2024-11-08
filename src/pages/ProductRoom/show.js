@@ -7,7 +7,8 @@ import zh_CN from 'antd/es/locale/zh_CN';
 import "./index.css";
 
 import Header from "../../components/Header";
-
+import PasswordShadow from "../../components/Home/PasswordShadow";
+import PasswordShadowSwitch from "../../components/Home/PasswordShadowSwitch";
 import Footer from "../../components/Footer";
 import GoodNav from "../../components/ProductRoom/GoodNav";
 import Good from "../../components/ProductRoom/Good";
@@ -224,15 +225,16 @@ class Show extends React.Component {
                         </div>
                     }
                 </div>
-                {this.props.state.commonState.showCartFlag && <SmallCart hideSmallCart={this.props.hideSmallCartFn} totalCartGoodCountFn={this.totalCartGoodCountFn}></SmallCart>}
-                
-                 {this.state.loadingFlag && <ShowLoading></ShowLoading>} 
-          
+                { this.props.state.commonState.showCartFlag && <SmallCart hideSmallCart={this.props.hideSmallCartFn} totalCartGoodCountFn={this.totalCartGoodCountFn}></SmallCart>}
+                { this.state.loadingFlag && <ShowLoading></ShowLoading>} 
+                { this.props.state.commonState.showSupplyPriceFlag && <PasswordShadow></PasswordShadow>}
+                { this.props.state.commonState.showSupplyPriceSwitchFlag && <PasswordShadowSwitch></PasswordShadowSwitch> }
                 <Footer></Footer>
             </div>
         )
     }
 }
+
 
 
 export default Show;

@@ -310,7 +310,7 @@ class PeopleOrderDetail extends React.Component {
                                         <li><span className="tit">收货地址:</span>  {this.state.orderInfo.provice}{this.state.orderInfo.city}{this.state.orderInfo.area} {this.state.orderInfo.address}</li>
                                         <li>
                                             <span className="tit">期望发货时间:</span> 
-                                            {this.state.orderInfo.expectedDeliveryTime?this.state.orderInfo.expectedDeliveryTime:"-----"} 
+                                            {this.state.orderInfo.expectedDeliveryTime?this.state.orderInfo.expectedDeliveryTime:"--"} 
                                             
                                             {/* <span className="change_time">更改时间</span> */}
                                         </li>

@@ -128,7 +128,7 @@ class RegisterPage extends React.Component {
     render () {
         return (  
           <form className="register_form_con">
-                <div className="title">注册</div>
+                <div className="title">C 端用户注册</div>
                 <div className="item_put">
                     <input type="text" className="put_val" placeholder="请输入手机号" value={this.state.phoneValue} onChange={this.phoneFn}/>    
                     <div className="msg">请输入正确手机号</div>

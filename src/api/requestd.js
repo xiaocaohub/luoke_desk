@@ -2,10 +2,10 @@ import axios from "axios";
 import {getStorageFn} from "../utils/localStorage";
 let instance = axios.create({
     
-     // baseURL: "http://116.62.207.126:55121",
+        // baseURL: "http://116.62.207.126:55121",
     
-
-    baseURL: "https://www.luockoo.cn",
+     baseURL: "https://test.luockoo.cn",
+    // baseURL: "https://www.luockoo.cn",
     // baseURL: "http://localhost:3000", 
     timeout: 15000
 })

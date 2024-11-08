@@ -9,11 +9,12 @@ import request from "../../api/request";
 import requestd from "../../api/requestd";
 import Empty from "../../components/Empty";
 import Header from "../../components/People/Header";
+import {checkTokenFn} from "../../utils/imgAuto";
 class PeopleOrderListPage extends React.Component {
     constructor (props) {
         super(props)
-        this.state = {
 
+        this.state = {
             currentNavIndex: 0,
             menuList: [
                 {
@@ -34,6 +35,8 @@ class PeopleOrderListPage extends React.Component {
                    title: "全部",
                    status: ""
                 },
+
+                
                 {
                   id: 1,
                   title: "待付款",
@@ -72,12 +75,15 @@ class PeopleOrderListPage extends React.Component {
             orderTotalCount: 0
         } 
     }
+
     componentDidMount () {
+        checkTokenFn()
         this.getOrderListFn()
     }
     selectNavFn = (index)=> {
         let navItem = this.state.tableNavArr[index];
         this.setState({
+            
             currentNavIndex: index,
             status: navItem.status,
             currentPage: 1
@@ -86,10 +92,7 @@ class PeopleOrderListPage extends React.Component {
         })
     }
     goorderDetailFn = (item)=>{
-        let index = this.state.currentNavIndex;
-        let tableNavArr = this.state.tableNavArr;
-        let orderStatus = tableNavArr[index].status;
-        window.location.href = "/people_order_detail?id=" + item.operateText.order +"&&status=" + orderStatus;
+        window.localStorage.href = "/people/order/detail"
     }
     getOrderListFn = ()=> {
         let _this = this;
@@ -156,9 +159,7 @@ class PeopleOrderListPage extends React.Component {
   
                           exportOrder: "导出订单",
                           buyRepeat: "再次购买",
-                          cancelOrder: "取消订单",
-
-                          orderStatus:  item.status
+                          cancelOrder: "取消订单"
                       }
                   }
                   orderArr.push(orderItem)
@@ -392,14 +393,10 @@ class PeopleOrderListPage extends React.Component {
 
                     return (
                         <div className="operate_btn_group">
+                           
+                           
                             {this.showPayBtnFn(item.orderState) && <Link to="/pay" className="btn"> 去付款 </Link>} 
-                            
                             <div className="btn"><Link to={ "/people_order_detail?id=" + item.operateText.order }>订单详情</Link></div> 
-                            
-                            {/* <div className="btn" onClick={()=>{ this.goorderDetailFn(item)} }>订单详情</div>  */}
-
-                            {/* <div className="btn"><Link to={ "/people_order_detail?id=" + item.operateText.order + "&&status=" + item.operateText.orderStatus }>订单详情</Link></div> */}
-                            
                             <div className="btn" onClick={()=>{ this.exportOrderFn(item) }}>导出订单</div> 
                             {/* <div className="btn">再次购买</div> */}
                             
@@ -442,18 +439,48 @@ class PeopleOrderListPage extends React.Component {
                   buyRepeat: "再次购买",
                   cancelOrder: "取消订单"
               }
+            },
+            {
+                key: '2',
+                nameList: {
+                    order: '202407030000422',
+                    count: 21
+                },
+                times: {
+                    time1: "2024-07-03",
+                    time2: "2024-07-04"
+                },
+                userNumber: {
+                    uname: "黄",
+                    phone: "12345"
+                },
+                totalMoney: 2000,
+                payTotalMoney: 2100,
+                customerInfo: {
+                    uName: "丁",
+                    phone: "12345",
+                    address: "广东省深圳市龙岗区黄屋村"
+                },
+                orderState:  "已取消",
+                operateText: {
+                  payBtn: "去付款",
+
+                  orderDetail: "订单详情",
+                  exportOrder: "导出订单",
+                  buyRepeat: "再次购买",
+                  cancelOrder: "取消订单"
+              }
             }
           ];
-
-
         return (
+
             <div className="people_order_list_con">
                 <Header></Header>
                 <div className="people_order_con">
-                
                     <div className="left_content">
-                
                         <div className="title"><span>订单管理</span></div>
+                        
+
                         <ul className="menu_list">        
                             {this.state.menuList.map((item, index)=> {
                                 return (<li className={this.state.navIndex==index?"on":""} key={index} onClick={()=>{this.selectNavFn(index)}}> <Link to={item.path}>{ item.title }</Link></li>) 
@@ -463,8 +490,8 @@ class PeopleOrderListPage extends React.Component {
 
                     <div className="main_content">
                         <div className="people_order_list_page_con">
-                 
-                    <div className="table_con">
+                   
+                        <div className="table_con">
                                 <ul className="nav_list">
                                     {this.state.tableNavArr.map((item, index)=> {
                                         return (<li className={this.state.currentNavIndex==index?"on": ""} key={index} onClick={()=>{this.selectNavFn(index)}}>{ item.title }</li>)

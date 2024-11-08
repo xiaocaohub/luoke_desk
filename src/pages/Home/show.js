@@ -6,6 +6,9 @@ import "./index.css";
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+
+import PasswordShadow from "../../components/Home/PasswordShadow";
+import PasswordShadowSwitch from "../../components/Home/PasswordShadowSwitch";
 import BannerCon from "../../components/BannerCon";
 import HotSell from "../../components/Home/HotSell";
 import VedioBanner from "../../components/Home/VedioBanner";
@@ -49,9 +52,11 @@ class Show extends React.Component {
         }
     }
     componentDidMount () {
+
         this.props.setNavIndexFn()
         this.getHotSellInfoFn()
         this.getRecomendGoodFn()
+
         this.getStyleFn()
         scrollTopFn()
         this.getCartInfoFn()
@@ -110,8 +115,8 @@ class Show extends React.Component {
         formData.append("key", "");
         formData.append("pageSize", 10);
         getStyleApi(formData).then((res)=>{  
-
             // console.log("style arr")
+
             // console.log(res.data) 
             // console.log("style arr")  
             let styleArr = res.data.data.list;
@@ -127,7 +132,6 @@ class Show extends React.Component {
     styleNavSelectFn = (index)=> {
         let styleNav = this.state.styleNav;
         let item = styleNav[index];
-       
         this.setState({ 
             styleIndex: index,
             styleId: item.value
@@ -143,7 +147,6 @@ class Show extends React.Component {
         let styleId = this.state.styleId;
         formData.append("api", "app.product.listProduct"); 
         
-        
         formData.append("storeId", storeId);
         formData.append("storeType", storeType);
         formData.append("page", 1);
@@ -158,8 +161,8 @@ class Show extends React.Component {
             })
         })
     }
+
     getCartInfoFn = ()=> {
-        
         let _this = this;
         let formData = new FormData();
         let token = getStorageFn("token");
@@ -169,18 +172,14 @@ class Show extends React.Component {
         formData.append("storeId", 1);
         formData.append("storeType", 6);
         request({
-            url: "/api/gw",         
-
+            url: "/api/gw",
             method: "POST",    
             data: formData
         }).then((res)=> {
             let resData = res.data.data.data; 
             resData.forEach((item, index)=>{
-
                 item.selectFlag = false;
-            })
-        
-        
+            })    
             setStorageFn("cartArr", resData)
         })
     }
@@ -278,6 +277,9 @@ class Show extends React.Component {
           
                 {/* {this.state.loadingFlag && <ShowLoading></ShowLoading>} */}
 
+               
+                { this.props.state.commonState.showSupplyPriceFlag && <PasswordShadow></PasswordShadow>}
+                { this.props.state.commonState.showSupplyPriceSwitchFlag && <PasswordShadowSwitch></PasswordShadowSwitch> }
                 <Footer></Footer>
             </div>
         )

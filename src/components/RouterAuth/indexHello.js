@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import {Route, useLocation, Redirect } from "react-router-dom";
-import { getStorageFn, setStorageFn } from "../../utils/localStorage";
+import { getStorageFn } from "../../utils/localStorage";
 import request from "../../api/request";
 import Layout from "../../pages/Layout";
 
@@ -19,9 +19,7 @@ request({
     method: "POST",
     data: formData
 }).then((res)=> {
-
     loginStatus = res.data.data.login_status;
-    setStorageFn("loginStatus", loginStatus)
 })
 
 function RouterAuth (props) {
@@ -39,12 +37,17 @@ function RouterAuth (props) {
 
 
 
+    console.log("targetRoute")
+    console.log(targetRoute)
+    console.log("targetRoute")
     if (targetRoute) {
     
         let {component} = targetRoute;
     
         let {layoutFlag} = targetRoute;
-        // return (<Route path={pathname} exact component={ component }></Route>)
+        console.log("layoutFlag")
+        console.log(layoutFlag)
+        console.log("layoutFlag")
         if (targetRoute.auth) {
             if (loginStatus == 1) {
                 return (<Route path={pathname} exact component={ component }></Route>)
@@ -54,8 +57,6 @@ function RouterAuth (props) {
         } else {
             return (<Route path={pathname} exact component={ component }></Route>)
         }
-    } else {
-        return (<Redirect to="/login"></Redirect>)
     }
 }
 

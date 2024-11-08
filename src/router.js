@@ -40,11 +40,13 @@ import routes from "./config/routerConfig";
 import routesOrder from "./config/routerOrderConfig";
 import RouterAuth from "./components/RouterAuth";
 import RouterOrderAuth from "./components/RouterOrderAuth";
-class IndexRouter extends React.Component {
 
+
+class IndexRouter extends React.Component {
+    constructor (props) {
+        super(props)
+    }
     render () {
-      
-    
         return (  
             // basename="/build"
             <BrowserRouter>

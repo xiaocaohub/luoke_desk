@@ -7,23 +7,23 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import GoodTable from "../../components/Cart/GoodTable";
 import UserInfo from "../../components/Cart/UserInfo";
+import PasswordShadow from "../../components/Home/PasswordShadow";
+import PasswordShadowSwitch from "../../components/Home/PasswordShadowSwitch";
 import {setStorageFn, getStorageFn} from "../../utils/localStorage";
 import SmallCart from "../../components/SmallCart";
 import request from "../../api/request";
 class Show extends React.Component {
+
     constructor (props) {
         super(props)
-
         this.state = {
             cartArr: [],
             selectAllFlag: 0,
             totalMoney: 0,
             totalCount: 0,
-
             totalVol: 0, 
             setImgHeight: 0,
             userInfo: {
-
                 province: "",
                 city: "",
                 area: "",
@@ -53,27 +53,24 @@ class Show extends React.Component {
         if (supplyPriceStatus == true) {
             supplyPriceStatusValue = 1;
         } else {
-
             supplyPriceStatusValue = ""
         } 
         this.setState({
-
             supplyPriceStatus: supplyPriceStatus,
             supplyPriceStatusValue: supplyPriceStatusValue,
             userInfo: userInfo
         })
     }
-
     reduceFn = (item, index)=> {
         let cartArr = this.state.cartArr;
+        
         if (item.goods_num > 1) {
             cartArr[index].goods_num = item.goods_num - 1;
         }
         this.setState({
             cartArr: cartArr
         }, function () {
-            this.changeGoodCountFn(cartArr[index])
-            
+            this.changeGoodCountFn(cartArr[index])    
             this.totalAll()
         })
     }
@@ -135,8 +132,6 @@ class Show extends React.Component {
                     if (supplyPriceStatusValue == 1 ||  _this.state.userInfo.roleId) {
                         totalMoney += item.discountPrice * item.goods_num;
                     } else {
-                  
-                  
                         totalMoney += item.price * item.goods_num;
                     }  
                     totalVol += item.capacity * item.goods_num;
@@ -157,7 +152,6 @@ class Show extends React.Component {
     }
     totalSelectGoodFn = ()=> {
         let cartArr = this.state.cartArr;
-     
         let count = 0;
         cartArr.forEach((item, index)=> {       
             if (item.checked == 1) {
@@ -169,7 +163,6 @@ class Show extends React.Component {
             totalCount: count
         })
     }
-
     selectGoodFn = (item, index)=> {
         let cartArr = this.state.cartArr;
         item.checked = item.checked == 1?0:1;
@@ -183,7 +176,6 @@ class Show extends React.Component {
             this.totalSelectGoodFn()
         })
     }
-
     selectGoodRequestFn = (selectId)=> {   
         let _this = this; 
         let formData = new FormData();
@@ -223,7 +215,6 @@ class Show extends React.Component {
             method: "POST",    
             data: formData
         }).then((res)=> {
-
             if (res.data.data) {
                  _this.totalAll()
             } else {
@@ -231,12 +222,9 @@ class Show extends React.Component {
             }
         })
     }
-
     selectAllFn = ()=> {
         let cartArr = this.state.cartArr;
         let selectAllFlag = this.state.selectAllFlag==1?0:1;
-        
-        
         let ids = "";
         cartArr.forEach((item,index)=> {
             item.checked = selectAllFlag;
@@ -296,7 +284,6 @@ class Show extends React.Component {
         formData.append("accessId", token);  
         formData.append("storeId", 1);
         formData.append("storeType", 6);
-
         request({
             url: "/api/gw",         
             method: "POST",    
@@ -311,12 +298,6 @@ class Show extends React.Component {
                     }
                 })
             }
-
-            
-            
-            
-            
-            
             _this.setState({
                 cartArr: arr
             }, function () {
@@ -452,20 +433,20 @@ class Show extends React.Component {
             <div className="cart_page_con">
                 <Header></Header>
                 <div className="content_common_width">
-                        <div className="search_con">
+                    <div className="search_good_con">
                         <div className="title">普通购买</div>
                         {/* <div className="search_btn"></div>       
                         <Input className="serach_put"/> */}
                     </div>
+
                     {this.state.cartArr.length>0 && <GoodTable cartArr={this.state.cartArr} totalSelectGoodCount={this.state.totalSelectGoodCount} reduceFn={this.reduceFn} addFn={this.addFn} selectGoodFn={this.selectGoodFn} deleteGoodConfirmFn={this.deleteGoodConfirmFn} putCountFn={this.putCountFn} blurGoodCountFn={this.blurGoodCountFn}></GoodTable>}
-        
+
                     <UserInfo userInfo={this.props.state.cartState.userInfo} detailAdressFn={this.detailAdressFn} changeInfo={this.changeInfoFn} setKeepFn={this.setKeepFn}></UserInfo>
                 </div>
              
                 <div className="total_con">    
                     <div className="content_common_width total_con_content">
-                        <div className={this.state.selectAllFlag?"item select_all on":"item select_all"} onClick={this.selectAllFn}>全选</div>
-                        
+                        <div className={this.state.selectAllFlag?"item select_all on":"item select_all"} onClick={this.selectAllFn}>全选</div>        
                         <div className="item delete_all" onClick={this.deleteSelectAllFn}>删除选中商品</div>            
                         <div className="item total_count">已选<span className="count"> <span>{this.state.totalCount}</span> </span>件商品</div>
                         {/* <Link to="/checkcart" className="pay_btn">去结算</Link> */}
@@ -477,6 +458,8 @@ class Show extends React.Component {
                     </div>
                 </div>
                 {/* {this.props.state.commonState.showCartFlag && <SmallCart hideSmallCart={this.props.hideSmallCartFn}  totalCartGoodCountFn={this.totalCartGoodCountFn}></SmallCart>} */}
+                { this.props.state.commonState.showSupplyPriceFlag && <PasswordShadow></PasswordShadow>}
+                { this.props.state.commonState.showSupplyPriceSwitchFlag && <PasswordShadowSwitch></PasswordShadowSwitch> }
                 
                 <Footer></Footer>
             </div>

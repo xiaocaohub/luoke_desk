@@ -19,10 +19,11 @@ class GoodDetail extends React.Component {
             content: ""
         }
     }
-    componentDidMount () {
 
+    componentDidMount () {
         this.init()
     }
+    
     init = ()=> {
         let  product = this.props.goodDetail.product;
         let  parameters = product.parameters;
@@ -32,17 +33,18 @@ class GoodDetail extends React.Component {
         let content = eval(product.content)[0].content;
         this.setState({
             content: content ,
+    
             realPhotos: realPhotos,
+    
+    
             attrArr: parameters,
             showRealPhotos: showRealPhotos
         }, function () {
-
-
             this.setImgHeightFn()
         })
     }
-    setImgHeightFn = ()=> {
-     
+
+    setImgHeightFn = ()=> { 
         let img = document.querySelectorAll(".good_edit_detail .img_list .img")[0];
         if (img) {
             let width = img.clientWidth;       
@@ -54,8 +56,8 @@ class GoodDetail extends React.Component {
     }
     showMoreFn = ()=> {
         let flag = !this.state.foldFlag;
+        let realPhotos = this.state.realPhotos;
 
-        let realPhotos = this.state.realPhotos;   
         let showRealPhotos = [];
         if (flag) {
             showRealPhotos = realPhotos.slice(0, 2)
@@ -74,11 +76,9 @@ class GoodDetail extends React.Component {
     }
     render () {
         return (
-            <div className="good_edit_detail">
-              
+            <div className="good_edit_detail">      
                 <div  className="content content_common_width">       
                     {this.state.content.length>0 && <div className="left" dangerouslySetInnerHTML={{ __html: this.state.content }}>
-                         
                     </div>}
                     {this.state.content.length==0 &&  <div className="left" >
                             <img src={EmptyImg} alt=""/>
@@ -91,8 +91,6 @@ class GoodDetail extends React.Component {
                             <span className={this.state.foldFlag?"show_btn":"show_btn on"} onClick={this.showMoreFn}>{this.state.foldFlag?"展开全部":"收起"}</span>
                         </div>  */}
  
-               
-
                         <div className="img_txt_con"> 
                             <div className="img_list">
                                 <Image.PreviewGroup>
@@ -104,12 +102,11 @@ class GoodDetail extends React.Component {
                                         // )
                                         return (
                                             <div  className="img_con" key={index}>
-                                                <Image
-                                                    src= {item}      
-                                                    // width={150} height={this.state.imgHeight} className="img"
-                                                    width={150} height={150} className="img"
-                                            />
-                                        </div>
+                                                <Image src= {item}      
+                                                        // width={150} height={this.state.imgHeight} className="img"
+                                                        width={150} height={150} className="img"
+                                                />
+                                            </div>
                                         )
                                     })}  
                                 </Image.PreviewGroup>
@@ -122,8 +119,7 @@ class GoodDetail extends React.Component {
                                 <ul className="txt_list">
                                     <li><span className="title">分类:</span>  <span className="txt">{this.props.goodDetail.product.categoryName} </span> </li>
                                     <li><span className="title">风格:</span>  <span className="txt">{this.props.goodDetail.product.styleName}</span> </li>
-                                    <li><span className="title">型号:</span>  <span className="txt">{ this.props.currentGood.marque }</span> </li>
-                                    
+                                    <li><span className="title">型号:</span>  <span className="txt">{ this.props.currentGood.marque }</span> </li>                                   
                                     <li><span className="title">体积(m³):</span>  <span className="txt">{ this.props.currentGood.capacity }</span> </li>
                                     <li><span className="title">包件数:</span>  <span className="txt">{ this.props.currentGood.bomNums }</span> </li>
                                     {this.state.attrArr.map((item, index)=>{
@@ -137,8 +133,9 @@ class GoodDetail extends React.Component {
                     </div>
                 </div>
                 
-            
             </div>
+
+
         )
     }
 }

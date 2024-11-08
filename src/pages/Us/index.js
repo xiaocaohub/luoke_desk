@@ -25,6 +25,5 @@ var mapDispatchToProps = (dispatch)=> {
         }
     }
 }
-
 let Us = connect(mapStateToProps, mapDispatchToProps)(Show);
 export default Us;

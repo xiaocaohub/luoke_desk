@@ -5,19 +5,18 @@ import RoomBanner from "../../components/RecommendeGood/RoomBanner";
 import Good from "../../components/RecommendeGood/Good";
 
 import Header from "../../components/Header";
-
+import PasswordShadow from "../../components/Home/PasswordShadow";
+import PasswordShadowSwitch from "../../components/Home/PasswordShadowSwitch";
 import Footer from "../../components/Footer";
- 
 import "./index.css";
 import {setStorageFn, getStorageFn} from "../../utils/localStorage";
 import request from "../../api/request";
 import {getGoodInfoApi} from "../../api/RecommendeGood";
 import SmallCart from "../../components/SmallCart";
-import {scrollTopFn} from "../../utils/imgAuto";
 
+import {scrollTopFn} from "../../utils/imgAuto";
 import ShowLoading from "../../components/Loading";
 class Show extends React.Component {
-
     constructor (props) {
         super(props)
         this.state = {
@@ -39,8 +38,6 @@ class Show extends React.Component {
                 {
                     id: 2,
                     imgSrc: "https://luockoo.oss-cn-shenzhen.aliyuncs.com/file/wfq.png",
-
-
                     title: "卧房区",
                     txt: "DINING AREA"
                 }
@@ -69,7 +66,6 @@ class Show extends React.Component {
                 }
             ],
             roomFirstArr: "",
-            
             roomTwoArr: "",
             roomThreeArr: "",
             loadingFlag: false
@@ -95,7 +91,6 @@ class Show extends React.Component {
         formData.append("api", "app.product.listProduct"); 
         formData.append("accessId", token);
         formData.append("storeId", storeId);
-        
         formData.append("storeType", storeType);
         formData.append("page", 1);
         formData.append("pageSize", 6);
@@ -243,13 +238,14 @@ class Show extends React.Component {
                 
          
                 {this.props.state.commonState.showCartFlag && <SmallCart hideSmallCart={this.props.hideSmallCartFn} totalCartGoodCountFn={this.totalCartGoodCountFn}></SmallCart>}
-         
-         
+                { this.props.state.commonState.showSupplyPriceFlag && <PasswordShadow></PasswordShadow>}
+                { this.props.state.commonState.showSupplyPriceSwitchFlag && <PasswordShadowSwitch></PasswordShadowSwitch> }
                 {/* {this.state.loadingFlag && <ShowLoading></ShowLoading>} */}
-                <Footer></Footer>
+                <Footer></Footer>                
             </div>
         )
     }
 }
+
 
 export default Show;

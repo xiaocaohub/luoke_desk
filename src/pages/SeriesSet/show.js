@@ -7,6 +7,8 @@ import {setStorageFn, getStorageFn} from "../../utils/localStorage";
 import Header from "../../components/Header";
 
 import Footer from "../../components/Footer";
+import PasswordShadow from "../../components/Home/PasswordShadow";
+import PasswordShadowSwitch from "../../components/Home/PasswordShadowSwitch";
 import Empty from "../../components/Empty";
 import Nav from "../../components/SeriesSet/Nav";
 import "./index.css";
@@ -100,10 +102,6 @@ class Show extends React.Component {
         // formData.append("productLabel", 102);
         formData.append("styleId", styleId);
         getStyleGoodArrApi(formData).then((res)=>{
-            console.log("SeriesSet")
-
-            console.log(res.data)   
-            console.log("SeriesSet")
             let goodArr = res.data.data.brandsList;
             this.setState({
                 styleGoodArr: goodArr
@@ -160,25 +158,22 @@ class Show extends React.Component {
                         </div>
                         <ul className="good_list">
                             {this.state.styleGoodArr && this.state.styleGoodArr.map((item, index)=> {
-
                                 return (<Good goodInfo={item}></Good>)
 
                             })}    
-                           
                         </ul>
                         {this.state.styleGoodArr.length==0 && <Empty></Empty>}
-                        
                     </div>
                 </div>
-            
                 {this.props.state.commonState.showCartFlag && <SmallCart hideSmallCart={this.props.hideSmallCartFn} totalCartGoodCountFn={this.totalCartGoodCountFn}></SmallCart>}
-            
+                { this.props.state.commonState.showSupplyPriceFlag && <PasswordShadow></PasswordShadow>}
+                { this.props.state.commonState.showSupplyPriceSwitchFlag && <PasswordShadowSwitch></PasswordShadowSwitch> }
                 {/* {this.state.loadingFlag && <ShowLoading></ShowLoading>} */}
+                
                 <Footer></Footer>
             </div>
         )
     }
 }
-
 
 export default Show;

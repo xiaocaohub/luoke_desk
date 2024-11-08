@@ -42,9 +42,12 @@ function Header () {
 
 
 
-    
     function getUserInfoFn () {
+
         let userInfo = JSON.parse(getStorageFn("userInfo"));
+        console.log("userInfo ---")
+        console.log(userInfo)
+        console.log("userInfo")
         setUserInfoFn(userInfo)
     }
 
@@ -131,18 +134,26 @@ function Header () {
                     {/* {userInfo && <div className="login_btn" onClick={loginOutFn}>退出</div>} */}
                     {userInfo && 
                         <div className="header_img">
-                            <div className="phone">{userInfo.phone}</div>
+                            <div className="phone">{userInfo.signatoryName?userInfo.signatoryName:userInfo.phone}</div>
                             <ul className="btn_group">
-                                <li><Link to="/people_order_list">会员后台</Link></li>
-                                {userInfo.roleId && <li onClick={checkSupplyPriceFn}>查看供货价</li> }
-                               
-                               
+                            
+                                {userInfo.roleId && <li><Link to="/people_order_list">管理后台</Link></li> }
+                            
+                            
+                                {userInfo.roleId && <li onClick={checkSupplyPriceFn}>查看供货价</li> }   
                                 <li onClick={loginOutFn}>退出登录</li>
                             </ul>
                         </div>
                     }     
                     {/* {userInfo && <img src={userInfo.headimgurl} alt="" className="header_img"/>}          */}
-                    {!userInfo && <Link to="/login" className="login_btn">登录</Link>}
+                    {!userInfo && <div className="login_btn login_bt">
+                         
+                        <span>登录</span>
+                        <ul className="login_btn_group">
+                            <li><Link to="/login?id=B"> B 端用户登录 </Link></li>
+                            <li><Link to="/login?id=C"> C 端用户登录 </Link> </li>
+                        </ul>
+                    </div>}
                     {!userInfo && <Link to="/register" className="login_btn">注册</Link>}
                 </div>
             </div>

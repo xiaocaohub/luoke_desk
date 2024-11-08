@@ -7,6 +7,8 @@ import totalBanner from "../../assets/total_banner.png";
 import Header from "../../components/Header";
 
 import Footer from "../../components/Footer";
+import PasswordShadow from "../../components/Home/PasswordShadow";
+import PasswordShadowSwitch from "../../components/Home/PasswordShadowSwitch";
 import vedioImg from "../../assets/rsw_pic.png";
 import competeIcon1 from "../../assets/icon/service_cycle.png";
 import competeIcon2 from "../../assets/icon/competence.png";
@@ -279,6 +281,8 @@ class Show extends React.Component {
                     
                     {this.props.state.commonState.showCartFlag && <SmallCart hideSmallCart={this.props.hideSmallCartFn} totalCartGoodCountFn={this.totalCartGoodCountFn}></SmallCart>}
                     <Footer></Footer>
+                    { this.props.state.commonState.showSupplyPriceFlag && <PasswordShadow></PasswordShadow>}
+                    { this.props.state.commonState.showSupplyPriceSwitchFlag && <PasswordShadowSwitch></PasswordShadowSwitch> }
                 </div>
             )
         }

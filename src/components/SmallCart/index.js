@@ -13,14 +13,13 @@ import Empty from "../Empty";
 class CartSmall extends React.Component {
     constructor (props) {
         super(props)
-        
-        this.state = {    
+
+        this.state = {
             cartArr: [],
             selectAllFlag: 0,
             totalMoney: 0,
             totalSelectCount: 0,
             setImgHeight: 0,
-
             supplyPriceStatus: false,
             supplyPriceStatusValue: null
         }
@@ -36,6 +35,8 @@ class CartSmall extends React.Component {
         let supplyPriceStatus = getStorageFn("supplyPriceStatus");   
         let supplyPriceStatusValue = "";
         if (supplyPriceStatus == true) {
+
+            
             supplyPriceStatusValue = 1;
         } else {
             supplyPriceStatusValue = ""
@@ -54,6 +55,7 @@ class CartSmall extends React.Component {
     }
     selectGoodFn = (item, index)=> {
         let cartArr = this.state.cartArr;
+
         item.checked = item.checked==1?0:1;
         cartArr[index] = item;
         setStorageFn("cartArr", cartArr)
@@ -64,7 +66,6 @@ class CartSmall extends React.Component {
             this.totalAll()
         })
     }
-
     selectGoodRequestFn = (selectId)=> {
         let _this = this; 
         let formData = new FormData();
@@ -112,7 +113,6 @@ class CartSmall extends React.Component {
         let totalMoney = 0;
         let totalSelectCount = 0;
         let supplyPriceStatusValue = this.state.supplyPriceStatusValue;
-
         if (cartArr.length>0) {
             cartArr.forEach((item,index)=> {
                 if (item.checked == 0 || !item.checked) {            
@@ -124,7 +124,6 @@ class CartSmall extends React.Component {
                     } else {
                         totalMoney += item.price * item.goods_num;
                     }
-                    
                     totalSelectCount += 1;
                 }
             })
@@ -139,6 +138,7 @@ class CartSmall extends React.Component {
             totalSelectCount: totalSelectCount
         })
     }
+
     selectAllFn = ()=> { 
         let cartArr = this.state.cartArr;
         let selectAllFlag = this.state.selectAllFlag==1?0:1;
@@ -148,7 +148,6 @@ class CartSmall extends React.Component {
             ids += item.id + ",";
         })
      
-        // this.selectGoodRequestFn(ids);
         this.selectAllGoodRequestFn(ids, selectAllFlag)
         this.setState({
             cartArr: cartArr,
@@ -173,7 +172,6 @@ class CartSmall extends React.Component {
     addFn = (item, index)=> {
         let cartArr = this.state.cartArr;
         cartArr[index].goods_num = item.goods_num + 1;
-
         this.changeGoodCountFn(cartArr[index])
         this.setState({
             cartArr: cartArr
@@ -182,9 +180,6 @@ class CartSmall extends React.Component {
         })
     }
     changeGoodCountFn = (selectGood)=> {   
-        // console.log("selectGood")
-     
-        // console.log(selectGood) 
         let _this = this; 
         let formData = new FormData();
         let token = getStorageFn("token");
@@ -193,16 +188,12 @@ class CartSmall extends React.Component {
         formData.append("accessId", token);
         formData.append("storeId", 1);
         formData.append("storeType", 6);
-        // formData.append("cartIds", "")
         formData.append("goodsJson", JSON.stringify(goodsJson))
-        request({
+        request({    
             url: "/api/gw",         
             method: "POST",    
             data: formData
         }).then((res)=> {
-            // console.log("add")
-
-            // console.log(res.data)
             if (res.data.data == true) {
                 _this.getCartInfoFn()
             }
@@ -218,9 +209,6 @@ class CartSmall extends React.Component {
         })
     }
     blurGoodCountFn = (goodItem)=> {
-        // console.log("blurGoodCountFn goodItem")
-        // console.log(goodItem)
-        // console.log("blurGoodCountFn goodItem")
         this.changeGoodCountFn(goodItem)
     }
     deleteGoodConfirmFn = (item, index)=> {
@@ -233,14 +221,12 @@ class CartSmall extends React.Component {
             content: "确认删除吗?",
             cancelText: "取消",
             okText: "确认",
-
             centered: true,
             onOk: function () {
                 _this.deleteGoodFn(deleteId)
             }
         })
     }
-
     deleteGoodFn = (deleteId)=> {   
         let _this = this; 
         let formData = new FormData();
@@ -255,38 +241,30 @@ class CartSmall extends React.Component {
             method: "POST",    
             data: formData
         }).then((res)=> {
-            // console.log(res.data)
             if (res.data.data) {
                message.success("删除成功")
                _this.getCartInfoFn()
             } else {
-        
                 message.error(res.data.message)
             }
         })
-    }
+    }   
     deleteSelectAllFn = ()=> {
-    
+     
         let _this = this;
-     
-     
         let cartArr = this.state.cartArr;
         let length = cartArr.length;   
         if (length > 0) {
             let selectCount = 0;
-
             cartArr.forEach((item)=> {
-            
                 if (item.checked == 1) {
                     selectCount += 1;
                 }
             })
-
             if (selectCount > 0) {
                 Modal.confirm({
                     title: "温馨提示",
                     content: "确认删除吗?",
-                    
                     cancelText: "取消",
                     okText: "确认",
                     centered: true,
@@ -303,10 +281,7 @@ class CartSmall extends React.Component {
             }
         }
     }
-
     getCartInfoFn = ()=> {
-
-
         let _this = this;
         let formData = new FormData();
         let token = getStorageFn("token");
@@ -321,7 +296,6 @@ class CartSmall extends React.Component {
         }).then((res)=> {
             let resData = res.data.data.data;
             _this.setState({
-
                 cartArr: resData
             }, function () {
                 _this.totalAll()
@@ -332,10 +306,13 @@ class CartSmall extends React.Component {
         })
     }
     goCartFn = ()=> {
+        let token = getStorageFn("token");
+        if (!token) {
+            message.error("未登录")
+            return ;
+        }
         let cartArr = this.state.cartArr;
-        
         let selectCount = 0;
-        
         let userInfo = JSON.parse(getStorageFn("userInfo"));
         // let roleId = userInfo.roleId;
         // setStorageFn("supplyPriceStatus", true)
@@ -349,45 +326,70 @@ class CartSmall extends React.Component {
             message.error("请选择商品")
             return  ;
         }
-
+        if(selectCount > 100){
+            message.error("最多选择100件商品")
+            return ;
+        }
         this.props.hideSmallCart()
         window.location.href = "/cart"; 
     }  
     exportCartFn = ()=> {
         let _this = this;
-        
+
         let formData = new FormData();
         
-        let token = getStorageFn("token");
         
+        let token = getStorageFn("token");
         let cartArr = this.state.cartArr;
         let exportArr = [];
-        cartArr.forEach((goodItem, index)=>{
-            if (goodItem.checked == 1) {
-                let item = {}
+        if (!token) {
+              
+              message.error("请登录")
 
+              setTimeout(()=> {
+
+                   window.location.href = "/login";
+              }, 2000)
+              return ;
+        }
+        if (cartArr.length == 0) {
+            message.error("没有商品")
+            return ;
+        }
+        cartArr.forEach((goodItem, index)=>{
+
+            if (goodItem.checked == 1) {
+            
+                let item = {};
                 item.area = goodItem.areaName;
-    
-                item.picture = goodItem.imgurl;
-                
+                item.picture = goodItem.imgurl;    
                 item.categoryName = goodItem.categoryName;
                 item.productCode = goodItem.productCode;
                 item.parameters = goodItem.skuName;
                 item.marque = goodItem.marque;
+
                 item.material = goodItem.material;
                 item.num = goodItem.goods_num ;
                 item.price = goodItem.price ;
                 exportArr.push(item);
             }
         })
- 
+        if (exportArr.length == 0) {
+
+            message.error("请选择商品")
+
+            return ;
+        }
+
         let exportArrStr = JSON.stringify(exportArr);
-        formData.append("api", "app.cart.exportGoodsExcel");    
+
+        formData.append("api", "app.cart.exportGoodsExcel"); 
+
         formData.append("accessId", token);
+        
         formData.append("storeId", 1);
         formData.append("storeType", 6);
         formData.append("supplierOpen", this.state.supplyPriceStatusValue);
-        
         formData.append("content", exportArrStr)
         formData.append("exportType", 1)
         requestd({

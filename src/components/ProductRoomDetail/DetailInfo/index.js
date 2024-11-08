@@ -1,20 +1,19 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {Input, message} from "antd";
+import {Input, message, Modal } from "antd";
 
 import { RightOutlined, StarOutlined, ShareAltOutlined } from '@ant-design/icons';
 
 import {setStorageFn, getStorageFn} from "../../../utils/localStorage";
+
+import UserInfoForm from "../UserInfoForm";
 import codeImg from "../../../assets/footer_code2.png";
 import "./index.css";
 
 class DetailInfo extends React.Component {
     constructor (props) {
         super(props)
-        // console.log("show detail props")
-        // console.log(props)
-
-        // console.log("show detail props")
+     
         this.state = {
             currentIndex: 0,
             bigImg: require("../../../assets/vedio_list1.png"),
@@ -27,22 +26,25 @@ class DetailInfo extends React.Component {
             currentSizeIndex: 0,
             currentSize: "",
             allGoodArr: [],
-
             selectGoodIds: [],
             // currentGood: props.goodDetail.skuBeanList[0],
             currentGood: "",
             goodFirst: props.goodDetail.skuBeanList[0],
             allColorSizeGoodArr: [],
-
             supplyPriceStatus: false,
             vedioSrc: props.goodDetail.product.productVideo,
-            defaultImgArr: []
+
+            defaultImgArr: [],
+            
+            
+            userInfoFlag: false,
+            userInfo: ""
             // defaultImgArr: props.goodDetail.product.defaultImgArr
         }   
     }
     componentDidMount () {
-       this.initDataFn()
 
+       this.initDataFn()
     //    this.setBigImgHeightFn()
     //    this.setBigVedioHeightFn()
     }
@@ -51,7 +53,6 @@ class DetailInfo extends React.Component {
         let supplyPriceStatus = getStorageFn("supplyPriceStatus");
         let vedioSrc = this.props.goodDetail.product.productVideo;
         let vedioNavSrc = "";
-
         let defaultImgArr = this.props.goodDetail.product.defaultImgArr;
         let attrList = this.props.goodDetail.attrList;
         let colorArr = attrList[0].attr;
@@ -61,10 +62,11 @@ class DetailInfo extends React.Component {
         let allGoodArr = this.props.goodDetail.skuBeanList;
         let selectGoodIds = [];
         let currentGood = "";
-
         let currentColorIndex = 0;
         let currentSizeIndex = 0;
+
         let bigImg = "";
+        let userInfo = getStorageFn("userInfo");
         selectGoodIds[0] = colorArr[0].id;
         selectGoodIds[1] = sizeArr[0].id;
         let goodFirst = this.props.goodDetail.skuBeanList[0];
@@ -81,7 +83,6 @@ class DetailInfo extends React.Component {
             })
 
             if (!indexType) {
-
                 defaultImgArr.unshift(vedioNavSrc)
             }
         }
@@ -101,7 +102,6 @@ class DetailInfo extends React.Component {
             allGoodArr: allGoodArr,
             selectGoodIds: selectGoodIds,
             goodFirst: goodFirst,
-
             currentGood: currentGood,
             // bigImg: goodFirst.imgurl,
             bigImg: bigImg,
@@ -109,7 +109,8 @@ class DetailInfo extends React.Component {
             currentColorIndex: currentColorIndex,
             currentSizeIndex: currentSizeIndex,
             vedioNavSrc: vedioNavSrc,
-            defaultImgArr: defaultImgArr
+            defaultImgArr: defaultImgArr,
+            userInfo: userInfo
         }, function () {
             if (vedioSrc) {
                 // _this.selectSizeFn(-1)
@@ -118,12 +119,10 @@ class DetailInfo extends React.Component {
                  _this.vedioCheckColorArrDisableFn()
                  _this.vedioCheckSizeArrDisableFn()
 
-
                 _this.props.setSelectGood("")
             } else if (!vedioSrc && defaultImgArr.length > 0) {
                 _this.setBigVedioHeightFn()
-                _this.vedioCheckColorArrDisableFn()
-                
+                _this.vedioCheckColorArrDisableFn()                
                 _this.vedioCheckSizeArrDisableFn()
             
                 _this.props.setSelectGood("")
@@ -131,7 +130,6 @@ class DetailInfo extends React.Component {
                 _this.selectSizeFn(0)
                 _this.selectColorFn(0)
                 _this.setBigImgHeightFn()
-
                 _this.props.setSelectGood(goodFirst)
             }
             this.play()
@@ -139,21 +137,18 @@ class DetailInfo extends React.Component {
     }
     setBigImgHeightFn () {
         let bigImg = document.getElementById("big_img");
-        console.log("width bigImg -----", bigImg)
         if (!bigImg) {
+
             return ;
         }
+
         let width = bigImg.width;
         let height = (width * 2)/3 ;
-
-        // console.log("width bigImg")
-        // console.log(width)
-        // console.log(height)
-        // console.log("width bigImg")
         let smallImg = document.querySelectorAll(".img_nav li")[0];
         let smallWidth = smallImg.clientWidth;
 
-        let smallHeight = (smallWidth * 2) / 3;   
+        let smallHeight = (smallWidth * 2) / 3;
+
         this.setState({
             bigHeight: height,
             smallHeight: smallHeight
@@ -540,12 +535,52 @@ class DetailInfo extends React.Component {
         message.success("复制成功")
     }
     addCartFn = ()=> {
+
+
+        let userInfo = JSON.parse(getStorageFn("userInfo"));
+        let roleId = "";
+        let submitFlag = "";  // 提交
+        let examineFlag = ""; // 审核
+        
+        let examineMsg = ""; 
+
+        if (!userInfo) {
+            message.error("请登录")
+            return ;
+        }
+        roleId = userInfo.roleId;
+        submitFlag = userInfo.submitFlag;
+        examineFlag = userInfo.examineFlag;
+        // submitFlag = 0;
+        if ( !roleId && submitFlag == 0) {
+
+            this.setState({
+                userInfoFlag: true
+            })
+
+
+            return ;
+        }
+
+        if (examineFlag == 0) {
+            examineMsg = "审核中";
+        } else if ( examineFlag == -1 ) {
+            examineMsg = "未通过";
+        }
+        if (!roleId && userInfo.examineFlag != 1) {
+            Modal.info({
+                 title: "提示",
+                 content: "提交成功" + examineMsg,
+                 centered: true,
+                 okText: "确定"
+            })
+            return ;
+        }
         this.props.addCartFn(this.state.count)
     }
     setBigImgFn = () => {
         let vedioSrc = this.state.vedioSrc;
         let defaultImgArr = this.state.defaultImgArr;
-
         let currentGood = this.state.currentGood;
         let bigImg = "";
         if (!currentGood && !vedioSrc && defaultImgArr.length > 0) {
@@ -555,26 +590,28 @@ class DetailInfo extends React.Component {
             bigImg: bigImg
         })
     }
-
+    userInfoHideFn = ()=> {
+        let userInfoFlag = this.state.userInfoFlag;
+        this.setState({       
+            userInfoFlag: false
+        })
+    }
     render () {
         return (
             <div className="detail_info_con">
                 <div className="detail_info">             
                     <div className="left">
                         <div className="big_img_con">  
-                            <div className="big_img_c" style={{height: this.state.bigHeight + "px"}}>
-                                
+                            <div className="big_img_c" style={{height: this.state.bigHeight + "px"}}>         
                                 { !this.state.currentGood && this.state.vedioSrc && this.state.currentIndex==0 && <video  className="big_video" src={this.state.vedioSrc} controls 
                                     style={{width:"100%",height: this.state.vedioHeight + "px"}} id="bigvideo"  muted>
                                 </video>} 
-                                
-                         
                                 { this.state.currentGood && <img src={this.state.bigImg} alt="" className="big_img" id="big_img"   style={{height: this.state.bigHeight + "px"}} />}
+                               
                                 { !this.state.currentGood && this.state.vedioSrc && this.state.defaultImgArr.length>0 && this.state.currentIndex>0 && <img src={this.state.bigImg} alt="" className="big_img" id="big_img"   style={{height: this.state.bigHeight + "px"}} />}
                                 { !this.state.currentGood && !this.state.vedioSrc && this.state.defaultImgArr.length>0 &&  <img src={this.state.bigImg} alt="" className="big_img" id="big_img"   style={{height: this.state.bigHeight + "px"}}/>}
                                 {/* {!this.state.currentGood &&this.state.defaultImgArr.length == 0 && <img src={this.state.bigImg} alt="" className="big_img" id="big_img"   style={{height: this.state.bigHeight + "px"}} onClick={this.checkSizeArrDisableFn}/>} */}
                                 {/* <img src={this.state.bigImg} alt="" className="big_img" id="big_img"  onClick={this.checkSizeArrDisableFn}/> */}
-                              
                             </div>
                             <div className="btn left_btn" onClick={this.leftImgFn}></div>
                             <div className="btn right_btn" onClick={this.rightImgFn}></div>
@@ -595,7 +632,6 @@ class DetailInfo extends React.Component {
                                 })
                             }
 
-
                             {
                                 !this.state.currentGood && !this.state.vedioSrc && this.state.defaultImgArr.length>0 && this.state.defaultImgArr.map((item, index)=> {
                                   // return (<li className={this.state.currentIndex==index?"small_img on":"small_img"}  onClick={()=>{this.selectNavFn(index, item)}} key={index}> 
@@ -604,8 +640,7 @@ class DetailInfo extends React.Component {
                                     </li>)
                                 })
                             }
-                            
-                           
+                                                       
                             {   
                                 this.state.currentGood && this.state.currentGood.imgArr.map((item, index)=> {
                                   // return (<li className={this.state.currentIndex==index?"small_img on":"small_img"}  onClick={()=>{this.selectNavFn(index, item)}} key={index}>      
@@ -615,7 +650,6 @@ class DetailInfo extends React.Component {
                                     </li>)
                                 })
                             }
-
 
                             {
                                 !this.state.currentGood &&this.state.defaultImgArr.length == 0 && this.state.goodFirst.imgArr.map((item, index)=> {
@@ -719,6 +753,11 @@ class DetailInfo extends React.Component {
 
                     </div>
                 </div>
+
+                <Modal open={ this.state.userInfoFlag } width="889px" okText="提交" cancelText="取消" centered={true} onCancel={this.userInfoHideFn} footer={null}>
+                   <UserInfoForm userInfoHideFn={this.userInfoHideFn}></UserInfoForm>
+                </Modal>
+               
             </div>
         )
     }

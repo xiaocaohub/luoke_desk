@@ -72,7 +72,9 @@
     display:flex;
     flex-direction:row;
     justify-content:center;
+    font-size: 14px;
     align-items: center;
+
 }
 .platform_con .pay_list > li img{
     margin-top:5px;
@@ -88,7 +90,7 @@
     position:absolute;
     right:20px;
     bottom:20px;
- 
+    font-size: 14px;
 }
 .platform_con .pay_list .money span{
     color:#E61D40;
@@ -99,54 +101,45 @@
     background:#fff;
 }
 .platform_con  .pay_btn{
-    
     width:200px;
-
     height:42px;
-
     line-height:42px;
     text-align:center;
     overflow:hidden;
     border-radius:5px;
     background:#1A1A1A;
     color:#fff;
-
-
     float:right;
-
     margin-top:29px;
     cursor:pointer;
     margin-bottom:100px;
 }
-
-
-
 .platform_con  .code_con{
- 
    margin:20px 0 100px;
    border:1px solid #E1E1E1;
    border-top:0;
 }
 .platform_con  .code_con .title{
-
     color:#fff;
     height:40px;
     line-height:40px;
     padding:0 20px;
-    
     background:#C6A189;
+    font-size: 14px;
 }
-
-
 .platform_con  .code_con  .tit{
     height:29px;
     line-height:29px;
     padding:0 20px;
-
     background:#FFF9F6;
     font-size:12px;
     overflow:hidden;
     color:#666;
+}
+
+
+.platform_con  .code_con  .tit span{
+    color: #E61D37;
 }
 .platform_con  .code_con .code_img_con{
     width:465px;
@@ -185,5 +178,20 @@
 
     display:block;
     float:right;
+    width: 190px;
+    height: 292px;
 }
-
+.platform_con .sub_btn{
+    width:200px;
+    height:42px;
+    line-height:42px;
+    text-align:center;
+    background:#1A1A1A;
+    color: #fff;
+    overflow:hidden;
+    float:right;
+    border-radius:5px;
+    margin:29px 0 100px;
+    font-size: 16px;
+    cursor:pointer;
+}

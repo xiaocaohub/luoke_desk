@@ -6,12 +6,14 @@ import Header from "../../components/Header";
 
 import Footer from "../../components/Footer";
 import Platform from "../../components/Pay/Platform";
-
 import Offline from "../../components/Pay/Offline";
+import Offlinea from "../../components/Pay/Offlinea";
+import PasswordShadow from "../../components/Home/PasswordShadow";
+import PasswordShadowSwitch from "../../components/Home/PasswordShadowSwitch";
 import {setStorageFn, getStorageFn} from "../../utils/localStorage";
 import "./index.css";
-  
 let now = new Date();
+
 let endTime = new Date(now.setDate(now.getDate() + 7));
 
 class Pay extends React.Component {
@@ -28,22 +30,38 @@ class Pay extends React.Component {
             },
             // payImg: require("../../assets/pay_instruction.png"),
             payImg: "https://luockoo.oss-cn-shenzhen.aliyuncs.com/file/pay_instruction.png",
-            llustrateFlag: false
+            llustrateFlag: false,
+            payNav: [
+                {
+                    
+                    id: 0,
+
+
+                    title: "平台支付"
+                },
+                {
+                    id: 1,
+                    title: "线下汇款"
+                }
+            ],
+            currentNavIndex: 0
         }
     }
+
+
+
+
     componentDidMount () {        
         this.init()
-    
         this.ltTime()
     }
 
     componentWillUnmount () {
+
         clearInterval(this.state.set)
     }
     init = ()=> {
-
         let orderNumber = getStorageFn("orderNumber"); 
-
         let payTotal = this.state.payTotal;
         let payOption = JSON.parse(getStorageFn("payOption"));                
         this.setState({
@@ -94,6 +112,12 @@ class Pay extends React.Component {
             llustrateFlag: false
         })
     }
+    selectNavFn = (index)=> {
+        console.log(index)
+        this.setState({
+            currentNavIndex: index
+        })
+    }
     render () {
         return (
             <div className="pay_page_con">
@@ -115,15 +139,24 @@ class Pay extends React.Component {
                             <div className="top">
                                 <ul className="nav_list">                 
                                     <li style={{display:"none"}}>结算通</li>
-                                    <li>线下汇款</li>
+
+                                    {
+                                        this.state.payNav.map((item, index)=> {
+
+                                            return (<li className={this.state.currentNavIndex==index?'on':''} onClick={()=>{this.selectNavFn(index)}}>{ item.title }</li>)
+                                        })
+                                    }
                                 </ul>
 
                                 <span className="tit" onClick={this.showFn}><InfoCircleOutlined /> 付款说明</span>
                             </div>
 
-                            {/* <Platform ></Platform>  */}
+                            {this.state.currentNavIndex==0 &&<Platform payTotal={this.state.payTotal} dateText={this.state.dateText}></Platform> }
 
-                            <Offline payTotal={this.state.payTotal}></Offline>
+                           
+                            {/* {this.state.currentNavIndex==0 && <Offlinea payTotal={this.state.payTotal}></Offlinea> } */}
+                           
+                            {this.state.currentNavIndex==1 && <Offline payTotal={this.state.payTotal}></Offline>}
                         </div>
                     </div>
 
@@ -135,10 +168,15 @@ class Pay extends React.Component {
                         <img src={this.state.payImg} className="img" onClick={this.hideFn}/>
                     </div>}
 
-
                     <Footer></Footer>
+
+
+                    { this.props.state.commonState.showSupplyPriceFlag && <PasswordShadow></PasswordShadow>}
+
+                    { this.props.state.commonState.showSupplyPriceSwitchFlag && <PasswordShadowSwitch></PasswordShadowSwitch> }
             </div>
         )
     }
 }
+
 export default Pay;

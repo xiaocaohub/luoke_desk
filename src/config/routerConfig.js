@@ -30,8 +30,8 @@ import ShopInfo from "../pages/ShopInfo";
 
 let routes = [
     {path:"/", name:"Home", component: Home, layoutFlag: true},
-    {path:"/recommendegood", name:"RecommendeGood", component: RecommendeGood, auth: true, layoutFlag: true},
-    {path:"/productroomdetail", name:"ProductRoomDetail", component: ProductRoomDetail, layoutFlag: true},
+    {path:"/recommendegood", name:"RecommendeGood", component: RecommendeGood, auth: false},
+    {path:"/productroomdetail", name:"ProductRoomDetail", component: ProductRoomDetail},
     {path:"/productroom", name:"ProductRoom", component: ProductRoom, layoutFlag: true},
 
     {path:"/series", name:"SeriesSet", component: SeriesSet},
@@ -57,6 +57,7 @@ let routes = [
     
     {path:"/people", name:"PeopleHome", component: PeopleHome},
     {path:"/people_order_list", name:"PeopleOrderListPage", component: PeopleOrderListPage},
+
     {path:"/people_order_detail", name:"PeopleOrderDetail", component: PeopleOrderDetail}
 ]
 export default routes;

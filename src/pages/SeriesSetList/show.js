@@ -8,6 +8,8 @@ import Footer from "../../components/Footer";
 import {getGoodListApi} from "../../api/SeriesSetList";
 import { getStorageFn, setStorageFn } from "../../utils/localStorage";
 import banner from "../../assets/seriesset_list.png";
+import PasswordShadow from "../../components/Home/PasswordShadow";
+import PasswordShadowSwitch from "../../components/Home/PasswordShadowSwitch";
 import SmallCart from "../../components/SmallCart";
 import GoodNav from "../../components/SeriesSetList/GoodNav";
 import request from "../../api/request";
@@ -218,6 +220,8 @@ class Show extends React.Component {
     
                 {this.state.loadingFlag && <ShowLoading></ShowLoading>}
 
+                { this.props.state.commonState.showSupplyPriceFlag && <PasswordShadow></PasswordShadow>}
+                { this.props.state.commonState.showSupplyPriceSwitchFlag && <PasswordShadowSwitch></PasswordShadowSwitch> }
                 <Footer></Footer>
             </div>
         )

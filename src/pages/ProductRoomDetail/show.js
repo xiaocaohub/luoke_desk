@@ -4,6 +4,8 @@ import DetailInfo from "../../components/ProductRoomDetail/DetailInfo";
 
 import Header from "../../components/Header";
 
+import PasswordShadow from "../../components/Home/PasswordShadow";
+import PasswordShadowSwitch from "../../components/Home/PasswordShadowSwitch";
 import Footer from "../../components/Footer";
 import Design from "../../components/ProductRoomDetail/Design";
 import SameKind from "../../components/ProductRoomDetail/SameKind";
@@ -11,11 +13,10 @@ import GoodDetail from "../../components/ProductRoomDetail/GoodDetail";
 import SmallCart from "../../components/SmallCart";
 import ShowLoading from "../../components/Loading";
 import "./index.css";
+
 import request from "../../api/request";
 import {setStorageFn, getStorageFn} from "../../utils/localStorage";
 import {scrollTopFn} from "../../utils/imgAuto";
-
-
 class Show extends React.Component {
     constructor (props) {
         super(props)
@@ -32,18 +33,19 @@ class Show extends React.Component {
                 }
             ],
             goodId: 0,
+
             goodInfo: "",
+
+
             goodInfoFlag: false,
             cartArr: [],
-
-
             addCartFlag: true,  
             sameGoodArr: [],
+
             loadingFlag: false
         }    
     }
     componentDidMount () {
-
         this.setGoodId() 
         this.initFn()        
         scrollTopFn()
@@ -131,12 +133,11 @@ class Show extends React.Component {
         if (!addCartFlag) {      
             return ;
         } 
-    
         currentGood.goods_id = parseInt(this.state.goodId);
         currentGood.attribute_id = currentGood.cid;
  
-        const arr = cartArr.filter(item=>item.goods_id == currentGood.goods_id && item.attribute_id == currentGood.attribute_id);        
-        
+
+        const arr = cartArr.filter(item=>item.goods_id == currentGood.goods_id && item.attribute_id == currentGood.attribute_id);
         if (arr.length > 0) {
             cartArr.forEach((item, index)=>{
                 if (item.goods_id == currentGood.goods_id && item.attribute_id == currentGood.attribute_id) {  
@@ -236,7 +237,6 @@ class Show extends React.Component {
             setStorageFn("cartArr", resData)
         })  
     }
-
     getSameGoodFn = ()=> {
         let _this = this;    
         let formData = new FormData();
@@ -282,6 +282,8 @@ class Show extends React.Component {
                 {this.state.goodInfo && this.state.currentGood &&<GoodDetail goodDetail={this.state.goodInfo} currentGood={this.state.currentGood}></GoodDetail>}
                 {this.props.state.commonState.showCartFlag && <SmallCart hideSmallCart={this.props.hideSmallCartFn} totalCartGoodCountFn={this.totalCartGoodCountFn}></SmallCart>}
          
+                { this.props.state.commonState.showSupplyPriceFlag && <PasswordShadow></PasswordShadow>}
+                { this.props.state.commonState.showSupplyPriceSwitchFlag && <PasswordShadowSwitch></PasswordShadowSwitch> }
                 {/* {this.state.loadingFlag && <ShowLoading></ShowLoading>} */}
 
                 <Footer></Footer>

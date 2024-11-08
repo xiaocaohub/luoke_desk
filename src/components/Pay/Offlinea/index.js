@@ -3,9 +3,9 @@ import {Input, DatePicker, Upload, Modal, message} from "antd";
 import {setStorageFn, getStorageFn} from "../../../utils/localStorage";
 import {DeleteOutlined} from '@ant-design/icons';
 import request from "../../../api/request";
-import "./index.css";
 
-class Offline extends React.Component {
+import "./index.css";
+class Offlinea extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
@@ -13,14 +13,30 @@ class Offline extends React.Component {
             balanceFlag: false,
             payList: [
                 {
+
                     id: 0,
-                    txt: "线下转账",
-                    
-            
-                    imgSrc: require("../../../assets/icon/pay_bank_card.png"),
+                    txt: "微信支付",
+                    imgSrc: require("../../../assets/icon/pay_wechat.png"),
                     selectFlag: true
+                },
+                {
+
+                    id: 1,
+                    txt: "支付宝支付",
+                    imgSrc: require("../../../assets/icon/pay_alipay_pay.png"),
+                    selectFlag: false
+                },
+                {
+                    id: 2,
+                    txt: "网银支付",
+                    imgSrc: require("../../../assets/icon/pay_unionpay.png"),
+                    selectFlag: false
                 }
             ],
+
+            payTypeIndex: 0,
+            
+            
             uploadImg: require("../../../assets/icon/add_pic.png"),
 
 
@@ -28,8 +44,10 @@ class Offline extends React.Component {
             fileList: [],
             uploadFlag: true,
             orderNumber: "",
-            
-            bankText: ""
+
+            bankText: "",
+
+            codeImg: require("../../../assets/footer_code1.png")
         }
     }
 
@@ -58,7 +76,8 @@ class Offline extends React.Component {
             }
         })
         this.setState({
-            payList: payList
+            payList: payList,
+            payTypeIndex: index
         })
     }
 
@@ -196,58 +215,15 @@ class Offline extends React.Component {
  
                {/*  <div className="pay_btn">立即支付</div> */}
                 
-                <div className="bank_info_con">
-                    <div className="bank_info">
-                        <p>账户名称: 深圳市珞珂家居有限公司</p>        
-                        <p>开户银行: 平安银行深圳龙岗支行</p>
-                        <p>账户号码: 1574 7827 5300 15</p>
-                    </div>
-           
- 
-                    <ul className="upload_con">
-                        <li>
-                            <div className="title">汇款银行</div>
-                            <Input className="bank_name" placeholder="请输入汇款银行" value={this.state.bankText} onChange={this.bankFn}/>
-                            <div className="txt">例：平安银行、工商银行、中国银行...</div>
-                        </li>
-                        <li>
-                            <div className="title">实际汇款时间</div>
+                {this.state.payTypeIndex != 2 && <div className="bank_info_con">
+                   
+                     <img src={this.state.codeImg} alt="" className="code_img"/>
+                </div>}
 
-
-                            <Input type="date" value={this.state.date} className="date_con" placeholder="年-月-日" onChange={this.selectDateFn} />
-                            {/* <DatePicker className="date" onChange={this.selectDateFn}/> */}
-                        </li>
-                        <li>
-                            <div className="title">上传汇款凭证</div>
-
-                            {/* <Upload
-                                name="avatar"
-                                listType="picture-card"
-                                className="avatar-uploader"
-                                showUploadList={false}
-                                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                                fileList={this.state.fileList}                         
-                            >
-                                 <img src={this.state.uploadImg} alt="avatar" style={{ width: '100%' }} />
-                            </Upload> */}
-
-
-                            <ul className="img_list">
-                                {this.state.fileList.map((item, index)=>{
-                                    return (<li><img src={item} alt=""/><DeleteOutlined className="delete" onClick={()=>{this.deleteImgFn(item, index)}}/></li>)
-                                })}
-                            </ul>
-                            <div className={this.state.fileList.length>=5?"upload_btn on":"upload_btn"}>
-                                <input type="file" className="file" onChange={(e) => this.selectImgFn(e)} multiple="multiple"/>
-                            </div>
-                            <div className="txt img_txt"><span>最多上传5张图 (每张不超过1M) 请一定按照订单金额 (精准到小数点2位) 付款, 否则财务审核不通过, 视为无效订单!</span></div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div className="sub_btn" onClick={this.submitFn}>提交</div>
+                {this.state.payTypeIndex != 2 && <div className="sub_btn_dis"></div>}
+                {this.state.payTypeIndex == 2 && <div className="sub_btn" onClick={this.submitFn}>提交</div>}
             </div>
         )
     }
 }
-export default Offline;
+export default Offlinea;

@@ -5,13 +5,13 @@
     margin-top: 40px;
 }
 
-.cart_page_con .search_con{
+.cart_page_con .search_good_con{
     overflow:hidden;
     background:#fff;
     margin:20px 0;
     padding:20px;
 }
-.cart_page_con .search_con .title{
+.cart_page_con .search_good_con .title{
     height:40px;
  
     line-height:40px;
