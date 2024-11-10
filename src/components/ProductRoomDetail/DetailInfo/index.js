@@ -570,7 +570,7 @@ class DetailInfo extends React.Component {
         if (!roleId && userInfo.examineFlag != 1) {
             Modal.info({
                  title: "提示",
-                 content: "提交成功" + examineMsg,
+                 content: "提交成功," + examineMsg,
                  centered: true,
                  okText: "确定"
             })

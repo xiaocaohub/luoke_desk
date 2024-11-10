@@ -301,7 +301,7 @@ class UserInfoForm extends React.Component {
                 </div>
                 <div className="item">
                     <div className="title"><span>*</span> 签约主体名称:</div>
-                    <div className="value_con"><input type="text" className="put_val" value={ this.state.companyName } onChange={this.companyNameFn} placeholder="请填写签约主体名称"/></div>
+                    <div className="value_con"><input type="text" className="put_val" value={ this.state.companyName } onChange={this.companyNameFn} placeholder="请填写公司名称"/></div>
                 </div>
                 <div className="item">
                

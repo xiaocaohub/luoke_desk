@@ -45,14 +45,10 @@ function Header () {
     function getUserInfoFn () {
 
         let userInfo = JSON.parse(getStorageFn("userInfo"));
-        console.log("userInfo ---")
-        console.log(userInfo)
-        console.log("userInfo")
         setUserInfoFn(userInfo)
     }
 
     function selectNavFn (index) { 
-    
         setIndexFn(index)
         const url = navList[index].path;
         history.push(url)
@@ -62,29 +58,22 @@ function Header () {
     }
     function loginOutFn () {
         window.localStorage.clear()
-        
         message.success('退出成功');
         setTimeout(()=>{
             window.location.href = "/"
-        
         }, 2000)
     } 
-
     function getNavIndexFn () {
         let navIndex = storeData.commonState.navIndex;
-
         setIndexFn(navIndex)
     }
     function matchNav () {
         let pathname = window.location.pathname;
         // let pathNameArr = pathname.split("build/");
-        
         let pathNameArr = pathname.split("/");
-   
         let pathNameFirst = pathNameArr[1];
         let pathUrl = "";
         let currentIndex = 0;
-        
         if (pathNameFirst && pathNameFirst.indexOf("/") != -1) {
             pathUrl = pathNameFirst.split("/")[0];
         } else {

@@ -109,7 +109,7 @@ class Platform extends React.Component {
                     </div>
                 </div>}
 
-                {this.state.payTypeIndex == 2 && <div className="sub_btn" onClick={this.submitFn}>提交</div>}
+                {this.state.payTypeIndex == 2 && <div className="sub_btn" onClick={this.submitFn}>立即支付</div>}
             </div>
         )
     }
